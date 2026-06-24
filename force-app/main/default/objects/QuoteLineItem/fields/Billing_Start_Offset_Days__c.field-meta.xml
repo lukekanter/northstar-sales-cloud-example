@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Start_Offset_Days__c</fullName>
+    <description
+  >Days after Quote.Effective_Date__c that billing for this line item begins. Mirrors OpportunityLineItem.Billing_Start_Offset_Days__c via the Copy-OLI-to-QLI accelerator. 0 = bill from day one.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Offset (days) from quote effective date before this line bills.</inlineHelpText>
+    <label>Billing Start Offset (Days)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

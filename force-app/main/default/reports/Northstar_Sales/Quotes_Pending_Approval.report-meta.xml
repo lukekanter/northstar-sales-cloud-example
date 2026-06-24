@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$Approval_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$Status</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$GrandTotal</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$ExpirationDate</field>
+    </columns>
+    <description>Quotes whose approval status is Pending, with their parent opportunity.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Quotes$Approval_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Quotes Pending Approval</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Northstar_Opportunity_With_Products_And_Quote__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description
+  >Fired when an Order is ready to provision; subscribed by provisioning automation.</description>
+    <eventType>HighVolume</eventType>
+    <label>Provisioning Requested</label>
+    <pluralLabel>Provisioning Requested Events</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

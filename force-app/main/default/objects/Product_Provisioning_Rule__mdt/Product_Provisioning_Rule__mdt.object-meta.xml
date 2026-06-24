@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >Per-product-family provisioning policy: does the family need a provisioning step, does it need AI Dispatch setup, what's the SLA, and who owns provisioning. Read by the Order trigger when deciding the Provisioning_Requested__e payload.</description>
+    <label>Product Provisioning Rule</label>
+    <pluralLabel>Product Provisioning Rules</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Total_Discount_Percent__c</field>
+        <field>Legal_Terms_Required__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Deal_Desk_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description
+    >Routes to the per-record Deal Desk approver; Legal Reviewers and Deal Desk groups receive the email alert.</description>
+        <label>Legal and Deal Desk Approval</label>
+        <name>Legal_And_Deal_Desk_Approval</name>
+    </approvalStep>
+    <description
+  >Legal/Deal Desk approval for Quotes flagged with non-standard terms. Keys off the independent Legal_Approval_Status__c dimension; final approval stamps it Approved so the Legal_Review_Non_Standard_Terms validation rule passes — without satisfying the finance or discount gates.</description>
+    <emailTemplate
+  >Northstar_Approvals/Non_Standard_Terms_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula
+    >OR(ISPICKVAL(Legal_Approval_Status__c, "Pending"), ISPICKVAL(Legal_Approval_Status__c, "Rejected"))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Northstar_Quote_Legal_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Northstar_Quote_Legal_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Northstar_Non_Standard_Terms_Approval_Alert</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Northstar Non-Standard Terms Approval</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

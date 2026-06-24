@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Term_Years__c</fullName>
+    <description
+  >Subscription length in years derived from Subscription_Term_Months__c via CASE() over the GVS labels. Default arm returns NULL (not 0) so unmapped values surface as missing data — they propagate to a null TCV__c, which is a visible data-quality signal, rather than silently zeroing revenue. Add a CASE arm when extending the GVS.</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  TEXT(Subscription_Term_Months__c),
+  "12 Months", 1,
+  "24 Months", 2,
+  "36 Months", 3,
+  NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <inlineHelpText
+  >Subscription length in years (auto-calculated from the months picklist).</inlineHelpText>
+    <label>Subscription Term (Years)</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <type>Number</type>
+</CustomField>

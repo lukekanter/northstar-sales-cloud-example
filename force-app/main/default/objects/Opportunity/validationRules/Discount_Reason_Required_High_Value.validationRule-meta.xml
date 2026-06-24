@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Reason_Required_High_Value</fullName>
+    <active>true</active>
+    <description
+  >a discounted Opportunity requires a Discount Reason. Keys off Is_Discounted__c (trigger-rolled true when any OLI Discount &gt; 0), replacing the Amount &gt;= 100k proxy so undiscounted deals need no reason.</description>
+    <errorConditionFormula
+  >Is_Discounted__c &amp;&amp; ISPICKVAL(Discount_Reason__c, &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Discount_Reason__c</errorDisplayField>
+    <errorMessage
+  >This Opportunity has a discounted product line, so a Discount Reason is required.</errorMessage>
+</ValidationRule>

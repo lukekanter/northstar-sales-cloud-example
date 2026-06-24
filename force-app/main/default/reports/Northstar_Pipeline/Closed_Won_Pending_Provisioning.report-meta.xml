@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Provisioning_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Generated_Orders__r$OrderNumber</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Generated_Orders__r$Status</field>
+    </columns>
+    <description>Closed-won opportunities whose provisioning is not yet completed.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Provisioning_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending,In Progress,Failed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Closed Won Pending Provisioning</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Northstar_Closed_Won_With_Provisioning__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

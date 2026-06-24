@@ -1,0 +1,86 @@
+[
+  {
+    "ProductCode": "NS-CORE-COMM",
+    "Name": "Northstar Core Platform - Commercial",
+    "Family": "Core Platform",
+    "IsActive": true,
+    "Description": "Core workflow automation platform, commercial edition (annual subscription)."
+  },
+  {
+    "ProductCode": "NS-CORE-ENT",
+    "Name": "Northstar Core Platform - Enterprise",
+    "Family": "Core Platform",
+    "IsActive": true,
+    "Description": "Core workflow automation platform, enterprise edition with advanced controls (annual)."
+  },
+  {
+    "ProductCode": "NS-ADD-ROUTE",
+    "Name": "Route Optimization Add-On",
+    "Family": "Core Platform",
+    "IsActive": true,
+    "Description": "Route optimization capability for logistics and field operations (annual add-on)."
+  },
+  {
+    "ProductCode": "NS-ADD-MOBILE",
+    "Name": "Field Team Mobile Add-On",
+    "Family": "Core Platform",
+    "IsActive": true,
+    "Description": "Mobile app access for distributed field teams (annual add-on)."
+  },
+  {
+    "ProductCode": "NS-ADD-ANALYTICS",
+    "Name": "Analytics Insights Add-On",
+    "Family": "Analytics Add-On",
+    "IsActive": true,
+    "Description": "Advanced analytics and reporting insights (annual add-on)."
+  },
+  {
+    "ProductCode": "NS-ADD-AIDISPATCH",
+    "Name": "AI Dispatch Assistant Add-On",
+    "Family": "AI Dispatch Add-On",
+    "IsActive": true,
+    "Description": "AI-assisted dispatch and scheduling recommendations (annual add-on)."
+  },
+  {
+    "ProductCode": "NS-SUP-STD",
+    "Name": "Premium Support - Standard",
+    "Family": "Premium Support",
+    "IsActive": true,
+    "Description": "Premium support with business-hours SLAs (annual)."
+  },
+  {
+    "ProductCode": "NS-SUP-ENT",
+    "Name": "Premium Support - Enterprise",
+    "Family": "Premium Support",
+    "IsActive": true,
+    "Description": "Premium support with 24x7 SLAs and a named TAM (annual)."
+  },
+  {
+    "ProductCode": "NS-IMPL-QS",
+    "Name": "Implementation Services - Quickstart",
+    "Family": "Implementation Services",
+    "IsActive": true,
+    "Description": "Fixed-scope quickstart onboarding engagement (one-time)."
+  },
+  {
+    "ProductCode": "NS-IMPL-ENT",
+    "Name": "Implementation Services - Enterprise",
+    "Family": "Implementation Services",
+    "IsActive": true,
+    "Description": "Enterprise implementation engagement with custom SOW (one-time)."
+  },
+  {
+    "ProductCode": "NS-TRAIN-ADMIN",
+    "Name": "Admin Training Package",
+    "Family": "Training",
+    "IsActive": true,
+    "Description": "Administrator training package (one-time)."
+  },
+  {
+    "ProductCode": "NS-USAGE-BLOCK",
+    "Name": "Usage Overage Block",
+    "Family": "Usage Overage",
+    "IsActive": true,
+    "Description": "Prepaid block of usage overage units."
+  }
+]

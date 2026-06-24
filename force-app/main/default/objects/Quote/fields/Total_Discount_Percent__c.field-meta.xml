@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Discount_Percent__c</fullName>
+    <description
+  >Total effective discount across all QLIs, expressed as a percentage (0-100). Calculated by the Quote trigger from per-QLI Discount values weighted by UnitPrice × Quantity. Distinct from the standard Quote.Discount field (which is per-quote and applies to the whole subtotal).</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Weighted average discount % across line items. Trigger-maintained.</inlineHelpText>
+    <label>Total Discount Percent</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

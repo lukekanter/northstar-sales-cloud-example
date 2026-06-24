@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provisioning_SLA_Hours__c</fullName>
+    <description
+  >SLA target for provisioning completion (hours). The async provisioning job uses it to set a Due time and to flag overdue Provisioning Exception Cases.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Hours allowed to complete provisioning before escalation.</inlineHelpText>
+    <label>Provisioning SLA (Hours)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

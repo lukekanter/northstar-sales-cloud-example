@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Approval_Required_For_Close</fullName>
+    <active>true</active>
+    <description
+  >an Opportunity that needs Deal Desk discount approval can't be Closed Won until it is approved. Keys off the trigger-stamped Discount_Approval_Status__c; the Bypass_Opportunity_Validation permission overrides.</description>
+    <errorConditionFormula
+  >ISPICKVAL(StageName, &quot;Closed Won&quot;) &amp;&amp; (ISPICKVAL(Discount_Approval_Status__c, &quot;Pending&quot;) || ISPICKVAL(Discount_Approval_Status__c, &quot;Rejected&quot;)) &amp;&amp; NOT($Permission.Bypass_Opportunity_Validation)</errorConditionFormula>
+    <errorDisplayField>Discount_Approval_Status__c</errorDisplayField>
+    <errorMessage
+  >This Opportunity requires Deal Desk discount approval and cannot be Closed Won until the discount is approved (or overridden with the Bypass Opportunity Validation permission).</errorMessage>
+</ValidationRule>

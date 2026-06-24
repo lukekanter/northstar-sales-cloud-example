@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_Date__c</fullName>
+    <description
+  >Date this quote was sent to the customer / went into effect. Distinct from Quote.ExpirationDate (standard) and from Subscription_Start_Date__c on the parent Opportunity — Effective_Date marks when terms apply for negotiation purposes.</description>
+    <inlineHelpText
+  >Date the quote was sent / went into effect for negotiation.</inlineHelpText>
+    <label>Effective Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

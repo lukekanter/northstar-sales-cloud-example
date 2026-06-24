@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queue_Developer_Name__c</fullName>
+    <description
+  >Queue DeveloperName (file basename of the queue's queue-meta.xml). CaseTriggerHandler maps the Case's post-assignment OwnerId to a Reason__c value via this field. Must match an existing Queue exactly — a missing match falls back to a sentinel reason rather than a stamp.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >DeveloperName of the Queue this reason applies to.</inlineHelpText>
+    <label>Queue Developer Name</label>
+    <length>80</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,31 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Contracts seeded by scripts/apex/seed_sample_data.apex. S5/S6 contracts stay Draft and exist to satisfy the Order-activation contract gate; S7's contract is activated with an end date inside the renewal window so RenewalService spawns the renewal Opportunity synchronously. The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S5",
+      "account": "[S5] Wayne Enterprises",
+      "source_opportunity": "[S5] Wayne Standard Deal",
+      "Status": "Draft",
+      "ContractTerm": 12,
+      "Subscription_End_Date__c": "today + 12 months - 1 day"
+    },
+    {
+      "scenario": "S6",
+      "account": "[S6] Umbrella Corp",
+      "source_opportunity": "[S6] Umbrella AI Dispatch Deal",
+      "Status": "Draft",
+      "ContractTerm": 12,
+      "Subscription_End_Date__c": "today + 12 months - 1 day"
+    },
+    {
+      "scenario": "S7",
+      "account": "[S7] Soylent Corp",
+      "source_opportunity": "[S7] Soylent Initial Deal",
+      "Status": "Draft -> Activated",
+      "ContractTerm": 12,
+      "Auto_Renewal_Enabled__c": true,
+      "Subscription_Start_Date__c": "today - 335 days",
+      "Subscription_End_Date__c": "today + 30 days (inside renewal window)"
+    }
+  ]
+}

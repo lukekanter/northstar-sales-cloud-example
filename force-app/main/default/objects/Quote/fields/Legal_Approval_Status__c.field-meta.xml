@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Approval_Status__c</fullName>
+    <description
+  >Per-dimension approval lifecycle for non-standard legal/payment terms (Not Required / Pending / Approved / Rejected). Automation-only: QuoteTriggerHandler escalates to Pending when Legal_Terms_Required__c is checked and the Non-Standard Terms approval process records the decision. One of the three independent dimensions (discount / legal / finance) that replace the single conflated Approval_Status__c gate.</description>
+    <inlineHelpText
+  >Legal approval lifecycle. Maintained by the Quote trigger and the non-standard terms approval process.</inlineHelpText>
+    <label>Legal Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Required</fullName>
+                <default>true</default>
+                <label>Not Required</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

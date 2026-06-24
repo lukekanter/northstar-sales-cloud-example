@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Desk_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >Discount-approval approver for this deal, set by segment (Enterprise vs SMB) via the routing flow. Used as the `relatedUserField` approver in the Discount Approval process. Replaces the dropped Enterprise/SMB Deal Desk queues.</description>
+    <inlineHelpText
+  >The user who approves discounts on this deal. Set by the routing flow.</inlineHelpText>
+    <label>Deal Desk Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Deal Desk Approvals (Opportunity)</relationshipLabel>
+    <relationshipName>Deal_Desk_Approval_Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

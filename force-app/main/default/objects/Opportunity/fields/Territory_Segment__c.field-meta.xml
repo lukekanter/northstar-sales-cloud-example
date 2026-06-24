@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Segment__c</fullName>
+    <description
+  >Denormalized "Region - Segment" string copied from the Account onto the Opp so report grouping on the deal does not require a join. Maintained by the Opp trigger.</description>
+    <inlineHelpText>Auto-stamped territory string. Do not edit.</inlineHelpText>
+    <label>Territory Segment</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

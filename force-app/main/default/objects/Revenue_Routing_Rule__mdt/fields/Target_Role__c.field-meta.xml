@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Role__c</fullName>
+    <description
+  >Role DeveloperName to look up the assignee from (typically picks any active user in the role). Used for direct user assignment (e.g. Enterprise AE pool); mutually exclusive with Target_Queue__c.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >DeveloperName of the target Role. Leave blank if Target Queue is set.</inlineHelpText>
+    <label>Target Role</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Risk_Level__c</fullName>
+    <description
+  >Coarse renewal-risk classification for the account. Inline value set (not a GVS) because this field is account-only — Contract/Case use their own risk picklists with the same labels. Set by the renewal-risk job.</description>
+    <inlineHelpText
+  >Coarse renewal risk: Low / Medium / High / Critical. Maintained by the renewal-risk job; do not edit unless triaging.</inlineHelpText>
+    <label>Renewal Risk Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <label>Low</label>
+            </value>
+            <value>
+                <fullName>Medium</fullName>
+                <default>false</default>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>High</fullName>
+                <default>false</default>
+                <label>High</label>
+            </value>
+            <value>
+                <fullName>Critical</fullName>
+                <default>false</default>
+                <label>Critical</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

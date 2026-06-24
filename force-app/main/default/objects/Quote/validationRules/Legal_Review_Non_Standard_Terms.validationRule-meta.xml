@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Review_Non_Standard_Terms</fullName>
+    <active>true</active>
+    <description
+  >a Quote with non-standard legal terms cannot be Accepted until Legal approves. Keys off the per-dimension Legal_Approval_Status__c (independent of finance/discount) so one approval can't satisfy another.</description>
+    <errorConditionFormula
+  >ISPICKVAL(Status, &quot;Accepted&quot;) &amp;&amp; (ISPICKVAL(Legal_Approval_Status__c, &quot;Pending&quot;) || ISPICKVAL(Legal_Approval_Status__c, &quot;Rejected&quot;))</errorConditionFormula>
+    <errorDisplayField>Legal_Approval_Status__c</errorDisplayField>
+    <errorMessage
+  >This Quote has non-standard legal terms and cannot be Accepted until Legal review approves it.</errorMessage>
+</ValidationRule>

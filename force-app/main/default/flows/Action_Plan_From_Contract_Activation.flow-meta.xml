@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >Northstar. Record-triggered on the Contract Status transition INTO "Activated". Creates the "Premium Support Activation" Action Plan related to the Contract ONLY when Support_Tier__c is a premium tier (Premium Standard / Premium Enterprise / 24x7); standard/blank tiers no-op (their onboarding plan already came from the Closed Won flow). Premium Support Activation is exclusive to this flow and Implementation Services Kickoff is exclusive to the Closed Won Custom-SOW playbook, so contract activation never duplicates a Closed Won plan. Support_Tier__c is the canonical contract support-tier field RenewalService also routes off (populated at contract creation / sample data, not by deal automation), so a blank tier safely yields no plan. Resolves the template Id before calling ActionPlanCreateInvocable (it binds templateNameOrID to an Id field) and no-ops if the template is not seeded yet. INTENTIONAL overlap with ContractTriggerHandler (renewal hand-off on the same activation edge) — both run.</description>
+    <environments>Default</environments>
+    <actionCalls>
+        <name>Create_Action_Plan</name>
+        <label>Create Premium Support Action Plan</label>
+        <locationX>176</locationX>
+        <locationY>540</locationY>
+        <actionName>ActionPlanCreateInvocable</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>relatedRecordID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>templateNameOrID</name>
+            <value>
+                <elementReference>Get_Template_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>daysToActionPlanStart</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <decisions>
+        <name>Support_Tier_Premium</name>
+        <label>Premium Support Tier?</label>
+        <locationX>176</locationX>
+        <locationY>180</locationY>
+        <defaultConnectorLabel
+    >Standard / Other (no plan)</defaultConnectorLabel>
+        <rules>
+            <name>Premium</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Support_Tier__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Premium Standard</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Support_Tier__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Premium Enterprise</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Support_Tier__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>24x7</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Template_Record</targetReference>
+            </connector>
+            <label>Premium Tier</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Template_Exists</name>
+        <label>Template Record Exists?</label>
+        <locationX>176</locationX>
+        <locationY>432</locationY>
+        <defaultConnectorLabel>Not Seeded Yet</defaultConnectorLabel>
+        <rules>
+            <name>Template_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Template_Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Action_Plan</targetReference>
+            </connector>
+            <label>Template Found</label>
+        </rules>
+    </decisions>
+    <interviewLabel
+  >Action Plan From Contract Activation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Action Plan From Contract Activation</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Template_Record</name>
+        <label>Get Premium Support Template by Name</label>
+        <locationX>176</locationX>
+        <locationY>312</locationY>
+        <assignNullValuesIfNoRecordsFound
+    >false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Premium Support Activation</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ActionPlanTemplate__c</object>
+        <connector>
+            <targetReference>Template_Exists</targetReference>
+        </connector>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Support_Tier_Premium</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria
+    >true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

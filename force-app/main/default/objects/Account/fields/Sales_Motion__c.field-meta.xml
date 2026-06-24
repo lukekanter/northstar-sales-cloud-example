@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Motion__c</fullName>
+    <description
+  >The dominant sales motion for this account (Direct, Partner Led, Self-Serve, Channel Resale, Renewal). Backed by Northstar_Sales_Motion GVS; reused on Opportunity for routing and forecasting.</description>
+    <inlineHelpText
+  >How the account is sold to. Drives routing rules, the deal-desk approver path, and renewal automation.</inlineHelpText>
+    <label>Sales Motion</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Sales_Motion</valueSetName>
+    </valueSet>
+</CustomField>

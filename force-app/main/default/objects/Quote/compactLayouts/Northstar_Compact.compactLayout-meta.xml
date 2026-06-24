@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Northstar_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Status</fields>
+    <fields>GrandTotal</fields>
+    <fields>Discount_Approval_Status__c</fields>
+    <fields>Total_Discount_Percent__c</fields>
+    <fields>ExpirationDate</fields>
+    <label>Northstar Compact</label>
+</CompactLayout>

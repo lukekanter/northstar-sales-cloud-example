@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Line_Item_Field__c</fullName>
+    <description
+  >API name of the source OpportunityLineItem field to copy FROM (e.g. Revenue_Type__c). Must be queryable on OpportunityLineItem; an unknown name fails the dynamic SOQL in COPY_QuoteLineItemTriggerHandler.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >API name of the OpportunityLineItem field to copy from.</inlineHelpText>
+    <label>Opportunity Line Item Field</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

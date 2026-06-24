@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_AI_Dispatch_Setup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Whether this family needs AI Dispatch credential setup as part of provisioning. Stamped onto Order.Requires_AI_Dispatch_Setup__c by the Order trigger.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Does this family need AI Dispatch credentials provisioned?</inlineHelpText>
+    <label>Requires AI Dispatch Setup</label>
+    <type>Checkbox</type>
+</CustomField>

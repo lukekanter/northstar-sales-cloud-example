@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Subscription</fullName>
+    <active>true</active>
+    <description
+  >Subscription quotes for Commercial/Mid-market customers.</description>
+    <label>Standard Subscription</label>
+</RecordType>

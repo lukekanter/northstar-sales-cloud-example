@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Before_Renewal__c</fullName>
+    <description
+  >How many days before Contract.Subscription_End_Date__c the renewal job should spawn the renewal Opportunity. Typical values: 90 for Premium tiers, 60 for Standard. Compared against Contract.Days_To_Renewal__c.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Days ahead of the end date to spawn the renewal.</inlineHelpText>
+    <label>Days Before Renewal</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Provisioning__c</fullName>
+    <description
+  >Formula Checkbox: true when the QLI's product family demands a provisioning step (Core Platform or AI Dispatch Add-On). Used downstream by the Order trigger to decide whether to publish Provisioning_Requested__e.</description>
+    <externalId>false</externalId>
+    <formula>OR(
+  TEXT(PricebookEntry.Product2.Family) = "Core Platform",
+  TEXT(PricebookEntry.Product2.Family) = "AI Dispatch Add-On"
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText
+  >True when the product family needs provisioning. Auto-calculated.</inlineHelpText>
+    <label>Requires Provisioning</label>
+    <required>false</required>
+    <type>Checkbox</type>
+</CustomField>

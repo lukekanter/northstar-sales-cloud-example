@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Agreement</fullName>
+    <active>true</active>
+    <description
+  >Contract spawned by the renewal-creation job. References the prior contract via Source_Opportunity__c chain.</description>
+    <label>Renewal Agreement</label>
+</RecordType>

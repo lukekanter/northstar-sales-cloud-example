@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Detail__c</fullName>
+    <description
+  >Finer-grained lead source value (Inbound MQL, Outbound BDR, Partner Referral, Customer Referral, Event, Content Download, Trial Signup, etc.). Backed by Northstar_Lead_Source_Detail GVS — complements (does not replace) the standard LeadSource picklist.</description>
+    <inlineHelpText
+  >The specific origin of the lead (e.g. "Trial Signup"). Standard LeadSource stays at the coarser bucket; this drives attribution reporting.</inlineHelpText>
+    <label>Lead Source Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Lead_Source_Detail</valueSetName>
+    </valueSet>
+</CustomField>

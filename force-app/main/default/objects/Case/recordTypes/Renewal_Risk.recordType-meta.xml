@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Risk</fullName>
+    <active>true</active>
+    <businessProcess>Renewal_Risk_Process</businessProcess>
+    <description
+  >Cases raised by Renewal_Risk_Raised__e. Owned by the Renewal Risk queue once escalated.</description>
+    <label>Renewal Risk</label>
+</RecordType>

@@ -1,0 +1,48 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Accounts seeded by scripts/apex/seed_sample_data.apex. S1/S2 anchor on Leads (S2's Account is created by Lead conversion). The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S3",
+      "Name": "[S3] Initech",
+      "Customer_Segment__c": "Commercial",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Standard"
+    },
+    {
+      "scenario": "S4",
+      "Name": "[S4] Stark Industries",
+      "Customer_Segment__c": "Enterprise",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Premium Enterprise"
+    },
+    {
+      "scenario": "S5",
+      "Name": "[S5] Wayne Enterprises",
+      "Customer_Segment__c": "Commercial",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Standard"
+    },
+    {
+      "scenario": "S6",
+      "Name": "[S6] Umbrella Corp",
+      "Customer_Segment__c": "Commercial",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Standard"
+    },
+    {
+      "scenario": "S7",
+      "Name": "[S7] Soylent Corp",
+      "Customer_Segment__c": "Enterprise",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Standard"
+    },
+    {
+      "scenario": "S8",
+      "Name": "[S8] Hooli",
+      "Customer_Segment__c": "Commercial",
+      "Region__c": "NA East",
+      "Support_Tier__c": "Standard",
+      "Renewal_Risk_Level__c": "High"
+    }
+  ]
+}

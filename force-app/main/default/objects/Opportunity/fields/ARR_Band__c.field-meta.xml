@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARR_Band__c</fullName>
+    <description
+  >ARR band bucketing ARR__c (or Amount when ARR__c is null). Maintained by OpportunityTriggerHandler — stamped in before-save Apex right after ARR__c is recalculated, so the band always matches the saved ARR__c; recomputed every save, so manual edits are overwritten. Backed by the Northstar_ARR_Band restricted global value set; thresholds: &lt;50K, 50K–250K, 250K–1M, 1M+.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Annual recurring revenue band (auto-calculated from ARR, or Amount when ARR is empty). Do not edit manually — the Opportunity revenue trigger resets it on every save.</inlineHelpText>
+    <label>ARR Band</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_ARR_Band</valueSetName>
+    </valueSet>
+</CustomField>

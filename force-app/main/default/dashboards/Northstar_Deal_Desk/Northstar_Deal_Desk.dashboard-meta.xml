@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>LoggedInUser</dashboardType>
+    <description>Deal desk queue: quotes awaiting approval and the distribution of quotes by discount reason.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <componentType>Metric</componentType>
+            <header>Quotes Pending Approval</header>
+            <indicatorHighColor>C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#D9C636</indicatorMiddleColor>
+            <metricLabel>Quotes awaiting approval</metricLabel>
+            <report>Northstar_Sales/Quotes_Pending_Approval</report>
+            <title>Quotes Pending Approval</title>
+        </components>
+    </leftSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Bar</componentType>
+            <drillEnabled>false</drillEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <groupingColumn>Opportunity$Discount_Reason__c</groupingColumn>
+            <header>Discount Distribution by Reason</header>
+            <legendPosition>Right</legendPosition>
+            <report>Northstar_Sales/Quote_Discount_Distribution</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>false</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Discount Distribution by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <textColor></textColor>
+    <title>Northstar Deal Desk</title>
+    <titleColor></titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

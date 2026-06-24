@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Start_Offset_Days__c</fullName>
+    <description
+  >Days after Opportunity.Subscription_Start_Date__c that billing for this line item begins. 0 = bill from day one; negative values are allowed for prepaid items. Used by downstream billing flows (not modeled in this org) and by ARR proration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Offset (days) from subscription start before this line bills. 0 = day one.</inlineHelpText>
+    <label>Billing Start Offset (Days)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency__c</fullName>
+    <description
+  >Proposed billing cadence on this quote. Backed by Northstar_Billing_Frequency GVS. Carries onto Order and Contract on acceptance.</description>
+    <inlineHelpText
+  >How often the customer will be billed if this quote is accepted.</inlineHelpText>
+    <label>Billing Frequency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Billing_Frequency</valueSetName>
+    </valueSet>
+</CustomField>

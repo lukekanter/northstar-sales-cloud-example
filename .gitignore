@@ -1,0 +1,100 @@
+# This file is used for Git repositories to specify intentionally untracked files that Git should ignore.
+# For useful gitignore templates see: https://github.com/github/gitignore
+
+# -----------------------------------------------------------------------------
+# Salesforce CLI cache, auth, and local state
+# -----------------------------------------------------------------------------
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+*.sfdx-source.zip
+
+# Retrieve/convert/deploy scratch output
+.retrieve/
+.deploy/
+.convert/
+mdapiout/
+metadata-out/
+manifest/package-*.xml.bak
+
+# Salesforce DX log/debug output (keep manifest/ and force-app/)
+*.apexlog
+*.log.apex
+
+# -----------------------------------------------------------------------------
+# LWC / Aura / Jest
+# -----------------------------------------------------------------------------
+**/lwc/jsconfig.json
+coverage/
+
+# -----------------------------------------------------------------------------
+# Logs and runtime
+# -----------------------------------------------------------------------------
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
+node_modules/
+
+# Open-source accelerators get cloned here before being copied into force-app/.
+# Track only what we vendor in; ignore raw clones.
+vendor/*
+!vendor/.gitkeep
+!vendor/README.md
+external/
+
+# -----------------------------------------------------------------------------
+# Tool caches
+# -----------------------------------------------------------------------------
+.pmdCache
+.eslintcache
+.cache/
+.tmp/
+tmp/
+temp/
+
+# -----------------------------------------------------------------------------
+# OS junk
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# Local env / secrets — never commit
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+auth-url.txt
+sfdxAuthUrl*.txt
+
+# -----------------------------------------------------------------------------
+# Python (for scripts/)
+# -----------------------------------------------------------------------------
+**/__pycache__/
+**/.venv/
+**/venv/
+*.pyc
+
+# -----------------------------------------------------------------------------
+# Local tooling / editor state (never commit)
+# -----------------------------------------------------------------------------
+.worktrees/
+.deploy-state/
+.agent-cache/
+.agent-scratch/
+
+# IDE local user settings (keep shared .vscode/ settings, ignore user-only)
+.vscode/*.local.json
+.idea/

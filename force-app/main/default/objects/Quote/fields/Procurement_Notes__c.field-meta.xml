@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement_Notes__c</fullName>
+    <description
+  >Free-form notes for procurement / vendor-management contacts (e.g. PO number requested, vendor onboarding steps, payment instructions). Carries onto Order on acceptance.</description>
+    <inlineHelpText>Notes for the customer's procurement team.</inlineHelpText>
+    <label>Procurement Notes</label>
+    <length>32768</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

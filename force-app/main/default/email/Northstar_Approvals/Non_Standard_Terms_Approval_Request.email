@@ -1,0 +1,10 @@
+A quote with non-standard legal/payment terms requires Legal and Deal Desk review.
+
+Quote: {!Quote.Name}
+Quote Number: {!Quote.QuoteNumber}
+Total Discount %: {!Quote.Total_Discount_Percent__c}
+Legal Terms Required: {!Quote.Legal_Terms_Required__c}
+
+Please review the non-standard terms and approve or reject in Salesforce.
+
+— Northstar Legal & Deal Desk automation

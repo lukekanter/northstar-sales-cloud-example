@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >Northstar. When an Order is updated to Status=Activated AND it has at least one provisioning-required line (OrderItem.Requires_Provisioning__c), publishes a Provisioning_Requested__e platform event carrying the Account and Order ids. The eligibility check mirrors ProvisioningService so non-provisioning orders do not raise false events; Apex still publishes the rich, line-item-aware payload (intentional overlap).</description>
+    <environments>Default</environments>
+    <decisions>
+        <name>Has_Provisioning_Lines</name>
+        <label>Has Provisioning-Required Lines?</label>
+        <locationX>176</locationX>
+        <locationY>432</locationY>
+        <defaultConnectorLabel>No Provisioning Lines</defaultConnectorLabel>
+        <rules>
+            <name>Has_Lines</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Provisioning_Lines</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference
+        >Publish_Provisioning_Requested</targetReference>
+            </connector>
+            <label>Has Lines</label>
+        </rules>
+    </decisions>
+    <interviewLabel
+  >Order After Save - Provisioning Dispatch {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order After Save - Provisioning Dispatch</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Publish_Provisioning_Requested</name>
+        <label>Publish Provisioning Requested</label>
+        <locationX>176</locationX>
+        <locationY>552</locationY>
+        <inputAssignments>
+            <field>Account_Id__c</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Order_Id__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Provisioning_Requested__e</object>
+        <storeOutputAutomatically>false</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Provisioning_Lines</name>
+        <label>Get Provisioning-Required Lines</label>
+        <locationX>176</locationX>
+        <locationY>288</locationY>
+        <assignNullValuesIfNoRecordsFound
+    >false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Provisioning_Lines</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Requires_Provisioning__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrderItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Provisioning_Lines</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria
+    >true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </filters>
+        <object>Order</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

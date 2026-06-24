@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Domain__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description
+  >Northstar: the bare lower-case domain of Website, used by Northstar_Account_Match to dedupe on domain rather than the full URL (https://example.com/pricing and http://www.example.com both reduce to example.com). Plain text (NOT a formula) because Salesforce matching rules reject formula fields as match criteria; populated on every save by the Account_Before_Save_Set_Website_Domain before-save flow, which strips the protocol, a leading www., and any path/query/fragment (from the first /, ?, or #). Blank Website yields blank.</description>
+    <externalId>false</externalId>
+    <label>Website Domain</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

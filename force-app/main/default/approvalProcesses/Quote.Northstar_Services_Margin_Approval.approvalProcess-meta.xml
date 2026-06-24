@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Total_Discount_Percent__c</field>
+        <field>Approval_Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Deal_Desk_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description
+    >Routes to the per-record Deal Desk approver; Finance Reviewers group receives the email alert.</description>
+        <label>Finance Margin Approval</label>
+        <name>Finance_Margin_Approval</name>
+    </approvalStep>
+    <description
+  >Finance approval for Quotes whose implementation-services line is below the margin floor. Enters on the independent Finance_Approval_Status__c dimension (QuoteTriggerHandler stamps Pending from DealDeskService.requiresFinanceReview), so blended-discount-only quotes are NOT misrouted here. Entry allows re-submission of a Rejected quote that is still below floor; once the services pricing is corrected the trigger clears the dimension. Final approval stamps it Approved so the Finance_Review_Below_Floor_Services validation rule passes — without satisfying the legal or discount gates.</description>
+    <emailTemplate
+  >Northstar_Approvals/Services_Margin_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula
+    >OR(ISPICKVAL(Finance_Approval_Status__c, "Pending"), ISPICKVAL(Finance_Approval_Status__c, "Rejected"))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Northstar_Quote_Finance_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Northstar_Quote_Finance_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Northstar_Services_Margin_Approval_Alert</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Northstar Services Margin Approval</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

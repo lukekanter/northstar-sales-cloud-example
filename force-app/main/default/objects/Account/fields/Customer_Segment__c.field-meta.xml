@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Segment__c</fullName>
+    <description
+  >Northstar segmentation tier for the account (Strategic, Enterprise, Commercial, SMB, Partner Managed). Backed by the Northstar_Customer_Segment global value set so Account, Opportunity, and the territory-style rollup all share one source of truth.</description>
+    <inlineHelpText
+  >Tier the account by strategic value and size. Drives routing, deal-desk thresholds, and segment-based automation.</inlineHelpText>
+    <label>Customer Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Customer_Segment</valueSetName>
+    </valueSet>
+</CustomField>

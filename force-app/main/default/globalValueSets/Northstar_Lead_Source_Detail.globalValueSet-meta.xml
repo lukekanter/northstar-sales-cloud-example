@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Webinar</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Webinar</label>
+    </customValue>
+    <customValue>
+        <fullName>Paid Search</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Paid Search</label>
+    </customValue>
+    <customValue>
+        <fullName>Event - Field</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Event - Field</label>
+    </customValue>
+    <customValue>
+        <fullName>Event - Virtual</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Event - Virtual</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner Referral</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Partner Referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Download</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Content Download</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound Cold</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Outbound Cold</label>
+    </customValue>
+    <customValue>
+        <fullName>Inbound Form</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Inbound Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewal</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Renewal</label>
+    </customValue>
+    <description
+  >Granular origin of a lead, complementing the standard LeadSource picklist for marketing attribution and pipeline sourcing analysis.</description>
+    <masterLabel>Lead Source Detail</masterLabel>
+</GlobalValueSet>

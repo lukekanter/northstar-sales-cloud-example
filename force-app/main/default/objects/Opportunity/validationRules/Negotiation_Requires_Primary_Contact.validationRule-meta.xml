@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negotiation_Requires_Primary_Contact</fullName>
+    <active>true</active>
+    <description
+  >Opportunity can't move to Negotiation without a primary contact role. Reads Has_Primary_Contact_Role__c, stamped by OpportunityTriggerHandler before-save (ahead of VRs). Stage is "Negotiation" per the business process.</description>
+    <errorConditionFormula
+  >(ISNEW() || ISCHANGED(StageName)) &amp;&amp; ISPICKVAL(StageName, &quot;Negotiation&quot;) &amp;&amp; NOT(Has_Primary_Contact_Role__c)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage
+  >Add a primary contact role before moving this Opportunity to Negotiation.</errorMessage>
+</ValidationRule>

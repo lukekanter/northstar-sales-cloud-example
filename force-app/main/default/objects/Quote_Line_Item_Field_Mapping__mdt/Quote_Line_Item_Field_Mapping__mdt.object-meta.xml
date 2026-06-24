@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >Maps a source OpportunityLineItem field to a target QuoteLineItem field for the Copy-OLI-to-QLI accelerator. Each row copies one OLI field value down to the matching QLI field when a Quote is created from an Opportunity. Salesforce only auto-copies STANDARD OLI fields to QLIs; this drives the custom-field copy. Modelled as a Custom Metadata Type (not the vendor's List custom setting) so the mapping rows ship as version-controlled, deployable metadata.</description>
+    <label>Quote Line Item Field Mapping</label>
+    <pluralLabel>Quote Line Item Field Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

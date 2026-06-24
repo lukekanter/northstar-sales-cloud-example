@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>LoggedInUser</dashboardType>
+    <description>Sales leadership view: open pipeline by segment, closed-won deals awaiting provisioning, and contracts approaching renewal.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>AMOUNT</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <drillEnabled>false</drillEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <groupingColumn>Opportunity.Territory_Segment__c</groupingColumn>
+            <header>Open Pipeline by Segment</header>
+            <legendPosition>Right</legendPosition>
+            <report>Northstar_Sales/Open_Pipeline_By_Segment</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>false</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Pipeline by Segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <componentType>Metric</componentType>
+            <header>Closed Won Pending Provisioning</header>
+            <indicatorHighColor>C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#D9C636</indicatorMiddleColor>
+            <metricLabel>Deals awaiting provisioning</metricLabel>
+            <report>Northstar_Pipeline/Closed_Won_Pending_Provisioning</report>
+            <title>Closed Won Pending Provisioning</title>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <componentType>Metric</componentType>
+            <header>Contracts Renewing in 90 Days</header>
+            <indicatorHighColor>C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#D9C636</indicatorMiddleColor>
+            <metricLabel>Upcoming renewals</metricLabel>
+            <report>Northstar_Pipeline/Contracts_Renewing_In_90_Days</report>
+            <title>Contracts Renewing in 90 Days</title>
+        </components>
+    </rightSection>
+    <textColor></textColor>
+    <title>Northstar Sales Executive</title>
+    <titleColor></titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

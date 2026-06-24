@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>LoggedInUser</dashboardType>
+    <description>Onboarding health: action plans behind schedule and the count of in-flight (active) onboarding plans.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <componentType>Metric</componentType>
+            <header>Onboarding Action Plans Behind Schedule</header>
+            <indicatorHighColor>C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#D9C636</indicatorMiddleColor>
+            <metricLabel>Overdue onboarding tasks</metricLabel>
+            <report>Northstar_Customer_Success/Onboarding_Action_Plans_Behind_Schedule</report>
+            <title>Onboarding Action Plans Behind Schedule</title>
+        </components>
+    </leftSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <componentType>Metric</componentType>
+            <header>Active Onboarding Plans</header>
+            <indicatorHighColor>C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#D9C636</indicatorMiddleColor>
+            <metricLabel>In-flight onboarding plans</metricLabel>
+            <report>Northstar_Customer_Success/Active_Onboarding_Plans</report>
+            <title>Active Onboarding Plans</title>
+        </components>
+    </rightSection>
+    <textColor></textColor>
+    <title>Northstar Customer Onboarding</title>
+    <titleColor></titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

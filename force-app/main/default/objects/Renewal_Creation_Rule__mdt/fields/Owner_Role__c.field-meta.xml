@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Role__c</fullName>
+    <description
+  >DeveloperName of the Role whose pool owns the spawned renewal Opportunity (typically the source Account's CSM via Customer_Success_Director, or an Enterprise AE for high-touch deals).</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >DeveloperName of the Role owning the new renewal Opp.</inlineHelpText>
+    <label>Owner Role</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

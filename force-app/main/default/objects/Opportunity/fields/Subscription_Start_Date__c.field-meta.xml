@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Start_Date__c</fullName>
+    <description
+  >First day of paid service on this opportunity. Often equals Contract.StartDate but stays distinct on the Opp so unconverted deals can carry a planned start.</description>
+    <inlineHelpText
+  >Planned subscription start. Drives Subscription End Date.</inlineHelpText>
+    <label>Subscription Start Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

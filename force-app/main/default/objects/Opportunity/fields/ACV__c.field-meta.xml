@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV__c</fullName>
+    <description
+  >Annual Contract Value. Stored, set by the Opportunity revenue trigger — recurring ARR plus prorated one-time line items.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Annual contract value ($). Trigger-maintained.</inlineHelpText>
+    <label>ACV</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <description
+  >Northstar sales region for the account (NAMER, EMEA, APAC, LATAM, Public Sector). Backed by Northstar_Region GVS and reused on Lead and Opportunity for consistent territory rollup.</description>
+    <inlineHelpText
+  >Sales region used for routing, pipeline reporting, and territory-style fallback metadata.</inlineHelpText>
+    <label>Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Region</valueSetName>
+    </valueSet>
+</CustomField>

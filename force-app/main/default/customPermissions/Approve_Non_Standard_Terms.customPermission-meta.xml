@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >Marks the holder as authorized to approve quotes with non-standard legal/payment terms routed through the Northstar Non-Standard Terms Approval process. Created; perm-set grants are deferred to the follow-up PR.</description>
+    <isLicensed>false</isLicensed>
+    <label>Approve Non-Standard Terms</label>
+</CustomPermission>

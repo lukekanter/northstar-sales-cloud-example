@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The closed-won Opportunity that produced this Order. Populated by the Northstar Order-creation wrapper around the Generate-Order accelerator — the vendor controller itself does not set this. Used for revenue reporting and the renewal-source chain.</description>
+    <inlineHelpText
+  >The Opportunity this Order was generated from. Trigger/flow-set.</inlineHelpText>
+    <label>Source Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Generated Orders</relationshipLabel>
+    <relationshipName>Generated_Orders</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

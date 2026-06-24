@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Volume Commit</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Volume Commit</label>
+    </customValue>
+    <customValue>
+        <fullName>Multi-Year Commit</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Multi-Year Commit</label>
+    </customValue>
+    <customValue>
+        <fullName>Competitive Replacement</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Competitive Replacement</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic Logo</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Strategic Logo</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner Co-Sell</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Partner Co-Sell</label>
+    </customValue>
+    <customValue>
+        <fullName>RFP Floor</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>RFP Floor</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Save</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Customer Save</label>
+    </customValue>
+    <description
+  >Justification captured when a discount is applied to a quote or opportunity; feeds deal-desk approval and margin reporting.</description>
+    <masterLabel>Discount Reason</masterLabel>
+</GlobalValueSet>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Package__c</fullName>
+    <description>Implementation package this playbook rule applies to. Inline value set duplicating Northstar_Implementation_Package GVS (GVS not supported on MDT).</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Implementation package this rule applies to.</inlineHelpText>
+    <label>Implementation Package</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Quickstart</fullName>
+                <default>false</default>
+                <label>Quickstart</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Custom Statement of Work</fullName>
+                <default>false</default>
+                <label>Custom Statement of Work</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

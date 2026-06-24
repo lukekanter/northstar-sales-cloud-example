@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Amount</field>
+        <field>Discount_Reason__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Deal_Desk_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description
+    >Routes to the per-record Deal Desk approver (set by segment via the routing flow).</description>
+        <label>Deal Desk Approval</label>
+        <name>Deal_Desk_Approval</name>
+    </approvalStep>
+    <description
+  >Discount approval for Opportunities with a non-standard discount reason. Approver is the per-record Deal_Desk_Approver__c user field.</description>
+    <emailTemplate>Northstar_Approvals/Discount_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula
+    >OR(ISPICKVAL(Discount_Reason__c, "Strategic Logo"), AND(NOT(ISBLANK(TEXT(Discount_Reason__c))), Amount &gt;= 100000))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Northstar_Opp_Discount_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Northstar_Opp_Discount_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Northstar_Discount_Approval_Request_Alert</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Northstar Discount Approval</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

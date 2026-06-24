@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The IM owning the implementation/onboarding engagement on this Contract. Set when Implementation_Package__c on the source Opp/Order is non-None. Used by the onboarding Action Plan flow to assign tasks.</description>
+    <inlineHelpText
+  >The Implementation Manager owning the onboarding engagement.</inlineHelpText>
+    <label>Implementation Manager</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Implementation Contracts</relationshipLabel>
+    <relationshipName>Implementation_Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

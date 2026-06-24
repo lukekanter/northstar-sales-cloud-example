@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <description
+  >Ordering hint. Routing service sorts ascending and applies the first match — lower number = higher priority. Leave gaps (10, 20, 30 ...) so new rules can be inserted without renumbering.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Lower number = higher priority. Use gaps of 10.</inlineHelpText>
+    <label>Priority</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

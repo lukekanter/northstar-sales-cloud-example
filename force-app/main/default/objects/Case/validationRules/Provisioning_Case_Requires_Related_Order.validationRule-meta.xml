@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provisioning_Case_Requires_Related_Order</fullName>
+    <active>true</active>
+    <description>A Provisioning Case must reference a Related Order, unless it documents a Provisioning_Failure_Reason__c (the exception path; soft note still fires).</description>
+    <errorConditionFormula>ISPICKVAL(Case_Category__c, &quot;Provisioning&quot;) &amp;&amp; ISBLANK(Related_Order__c) &amp;&amp; ISBLANK(Provisioning_Failure_Reason__c)</errorConditionFormula>
+    <errorDisplayField>Related_Order__c</errorDisplayField>
+    <errorMessage>A Provisioning case must reference a Related Order (or document a Provisioning Failure Reason for an unlinked exception).</errorMessage>
+</ValidationRule>

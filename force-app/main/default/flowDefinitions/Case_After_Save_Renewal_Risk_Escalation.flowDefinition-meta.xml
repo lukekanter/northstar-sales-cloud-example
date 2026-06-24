@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!--
+      Deactivates Case_After_Save_Renewal_Risk_Escalation. Deploying
+      the flow itself as `Draft` only adds an inactive version; it does NOT
+      deactivate whatever version is already active in the target org. Setting
+      activeVersionNumber to 0 turns the flow OFF so the retired Task-creation
+      automation can't run alongside the new CaseTriggerHandler path.
+    -->
+    <activeVersionNumber>0</activeVersionNumber>
+</FlowDefinition>

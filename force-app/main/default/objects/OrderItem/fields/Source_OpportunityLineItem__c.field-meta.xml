@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_OpportunityLineItem__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The OLI on the source Opportunity that produced this OrderItem. Populated by the Northstar Order-creation wrapper — the vendor Generate-Order controller does not set it. Useful for line-level revenue lineage.</description>
+    <inlineHelpText>The OLI this Order line was generated from.</inlineHelpText>
+    <label>Source Opportunity Line Item</label>
+    <referenceTo>OpportunityLineItem</referenceTo>
+    <relationshipLabel>Generated Order Items</relationshipLabel>
+    <relationshipName>Generated_Order_Items</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

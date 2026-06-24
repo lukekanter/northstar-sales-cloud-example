@@ -1,0 +1,15 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Contacts seeded by scripts/apex/seed_sample_data.apex. S2's Contact is created by Lead conversion; S5/S6 seed an explicit primary contact on the account. The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S5",
+      "LastName": "[S5] Primary Contact",
+      "account": "[S5] Wayne Enterprises"
+    },
+    {
+      "scenario": "S6",
+      "LastName": "[S6] Primary Contact",
+      "account": "[S6] Umbrella Corp"
+    }
+  ]
+}

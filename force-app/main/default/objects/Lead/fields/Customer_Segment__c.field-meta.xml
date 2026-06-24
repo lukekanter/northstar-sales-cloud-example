@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Segment__c</fullName>
+    <description
+  >Predicted segmentation tier for the lead (Strategic, Enterprise, Commercial, SMB, Partner Managed). Same Northstar_Customer_Segment GVS as Account.Customer_Segment__c so segment carries through on Lead conversion.</description>
+    <inlineHelpText
+  >Tier the lead is being qualified into. Drives SDR routing and the deal-desk threshold once converted.</inlineHelpText>
+    <label>Customer Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Customer_Segment</valueSetName>
+    </valueSet>
+</CustomField>

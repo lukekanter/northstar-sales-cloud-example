@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Terms_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True when this quote requires Legal review of non-standard terms (custom MSA, unusual indemnity, modified SLA). Triggers the Non-Standard Terms approval process.</description>
+    <inlineHelpText
+  >Check if Legal review of non-standard terms is needed.</inlineHelpText>
+    <label>Legal Terms Required</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

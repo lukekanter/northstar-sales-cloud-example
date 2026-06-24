@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency__c</fullName>
+    <description
+  >Billing cadence locked-in on this Order. Backed by Northstar_Billing_Frequency GVS. Mirrored from the source Quote at Order creation; immutable thereafter (the Order trigger does not update it on Quote changes).</description>
+    <inlineHelpText>Locked billing cadence for this Order.</inlineHelpText>
+    <label>Billing Frequency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Billing_Frequency</valueSetName>
+    </valueSet>
+</CustomField>

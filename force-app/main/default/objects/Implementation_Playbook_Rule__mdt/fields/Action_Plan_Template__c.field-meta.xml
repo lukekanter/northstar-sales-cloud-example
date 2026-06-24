@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Plan_Template__c</fullName>
+    <description
+  >Name of the ActionPlanTemplate__c record to spawn (seeds the templates). The onboarding flow passes this value to ActionPlanCreateInvocable.templateNameOrId.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Name of the Action Plan template to instantiate.</inlineHelpText>
+    <label>Action Plan Template</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

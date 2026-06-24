@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_QuoteLineItem__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The QLI on the source Quote that produced this OrderItem. Set by the Order-creation wrapper alongside Source_OpportunityLineItem__c. Carries QLI-only custom values (e.g. negotiated discount) onto the Order for reporting.</description>
+    <inlineHelpText>The QLI this Order line was generated from.</inlineHelpText>
+    <label>Source Quote Line Item</label>
+    <referenceTo>QuoteLineItem</referenceTo>
+    <relationshipLabel>Generated Order Items</relationshipLabel>
+    <relationshipName>Generated_Order_Items</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

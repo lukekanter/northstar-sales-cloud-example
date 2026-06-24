@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated_To_Renewal_Queue__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Set true once the Case has been reassigned to the Renewal Risk queue. Used to make the Case routing/escalation flow idempotent on re-run.</description>
+    <inlineHelpText
+  >True once the Case has been escalated to the Renewal Risk queue.</inlineHelpText>
+    <label>Escalated To Renewal Queue</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

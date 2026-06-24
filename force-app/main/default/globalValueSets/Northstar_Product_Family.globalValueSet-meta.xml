@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Core Platform</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Core Platform</label>
+    </customValue>
+    <customValue>
+        <fullName>Analytics Add-On</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Analytics Add-On</label>
+    </customValue>
+    <customValue>
+        <fullName>AI Dispatch Add-On</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>AI Dispatch Add-On</label>
+    </customValue>
+    <customValue>
+        <fullName>Premium Support</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Premium Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Implementation Services</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Implementation Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Training</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Sandbox / Test Environment</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Sandbox / Test Environment</label>
+    </customValue>
+    <customValue>
+        <fullName>Usage Overage</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>Usage Overage</label>
+    </customValue>
+    <description
+  >Groups Northstar products and SKUs into families for the product catalog, price books, and revenue reporting.</description>
+    <masterLabel>Product Family</masterLabel>
+</GlobalValueSet>

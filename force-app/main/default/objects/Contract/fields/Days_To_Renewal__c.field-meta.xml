@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_To_Renewal__c</fullName>
+    <description
+  >Days remaining until this Contract's subscription ends. Formula = Subscription_End_Date__c - TODAY. Returns null if Subscription_End_Date__c is blank (the data-quality-signal pattern). Negative values mean the subscription has already expired. Read by the renewal-creation job to decide when to spawn the renewal Opp.</description>
+    <externalId>false</externalId>
+    <formula>Subscription_End_Date__c - TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <inlineHelpText
+  >Days until subscription end. Negative = already expired.</inlineHelpText>
+    <label>Days To Renewal</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

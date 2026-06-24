@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Score_At_Creation__c</fullName>
+    <description
+  >Snapshot of Lead.Lead_Score__c at the moment this Task was created (typically by the SDR-routing flow on Lead). Lets attribution reports compare the score the SDR saw vs. the current score without time-travel queries.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Lead score captured at Task creation. Snapshot — do not edit.</inlineHelpText>
+    <label>Lead Score At Creation</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

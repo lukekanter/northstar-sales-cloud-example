@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The closed-won Opportunity that produced this Contract. Populated by the Contract-creation flow from Order.Source_Opportunity__c. Used for revenue lineage and the renewal chain.</description>
+    <inlineHelpText
+  >The Opportunity this Contract was generated from.</inlineHelpText>
+    <label>Source Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Source Contracts</relationshipLabel>
+    <relationshipName>Source_Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

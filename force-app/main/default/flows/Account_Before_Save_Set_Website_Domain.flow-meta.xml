@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Website_Domain</name>
+        <label>Set Website Domain from Website</label>
+        <locationX>176</locationX>
+        <locationY>288</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Website_Domain__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DomainFromWebsite</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description
+  >Northstar. Before-save: on every Account create/update, derive Website_Domain__c as the bare lower-case domain of Website (strip http(s):// protocol, a leading www., and any path/query/fragment from the first /, ?, or # onward). Website_Domain__c is a plain text field populated here because Salesforce matching rules reject formula fields as match criteria, so Northstar_Account_Match keys on this stamped value instead. Always recomputed so the domain stays in sync with Website; blank Website yields blank.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DomainFromWebsite</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.Website}),
+  &quot;&quot;,
+  IF(
+    CONTAINS(
+      IF(
+        LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 4) = &quot;www.&quot;,
+        MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 5, LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;))),
+        SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;)
+      ),
+      &quot;/&quot;
+    ),
+    LEFT(
+      IF(
+        LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 4) = &quot;www.&quot;,
+        MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 5, LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;))),
+        SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;)
+      ),
+      FIND(
+        &quot;/&quot;,
+        IF(
+          LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 4) = &quot;www.&quot;,
+          MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 5, LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;))),
+          SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;)
+        )
+      ) - 1
+    ),
+    IF(
+      LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 4) = &quot;www.&quot;,
+      MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;), 5, LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;))),
+      SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(TRIM({!$Record.Website})), &quot;https://&quot;, &quot;&quot;), &quot;http://&quot;, &quot;&quot;), &quot;?&quot;, &quot;/&quot;), &quot;#&quot;, &quot;/&quot;)
+    )
+  )
+)</expression>
+    </formulas>
+    <interviewLabel
+  >Account Before Save - Set Website Domain {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Before Save - Set Website Domain</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Set_Website_Domain</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

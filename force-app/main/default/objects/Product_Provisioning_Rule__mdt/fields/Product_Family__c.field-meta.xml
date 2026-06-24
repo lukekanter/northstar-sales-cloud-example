@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <description>Product family this provisioning policy applies to. Inline value set duplicating Northstar_Product_Family GVS (GVS not supported on MDT).</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Product family this rule applies to.</inlineHelpText>
+    <label>Product Family</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core Platform</fullName>
+                <default>false</default>
+                <label>Core Platform</label>
+            </value>
+            <value>
+                <fullName>Analytics Add-On</fullName>
+                <default>false</default>
+                <label>Analytics Add-On</label>
+            </value>
+            <value>
+                <fullName>AI Dispatch Add-On</fullName>
+                <default>false</default>
+                <label>AI Dispatch Add-On</label>
+            </value>
+            <value>
+                <fullName>Premium Support</fullName>
+                <default>false</default>
+                <label>Premium Support</label>
+            </value>
+            <value>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+                <label>Implementation Services</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Sandbox / Test Environment</fullName>
+                <default>false</default>
+                <label>Sandbox / Test Environment</label>
+            </value>
+            <value>
+                <fullName>Usage Overage</fullName>
+                <default>false</default>
+                <label>Usage Overage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

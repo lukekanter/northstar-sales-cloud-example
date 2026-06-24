@@ -1,0 +1,78 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Opportunities seeded by scripts/apex/seed_sample_data.apex. Stage transitions shown as `from -> to` are applied as separate updates so Update-triggered automation fires. The Closed Won deals (S5/S6) generate their Order via the Generate Order invocable; S7's renewal Opportunity is created by RenewalService on contract activation (not seeded directly). The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S2",
+      "Name": "[S2] Globex Enterprise Expansion",
+      "note": "Created by Lead conversion of [S2] Enterprise.",
+      "account": "Globex Corporation (from conversion)"
+    },
+    {
+      "scenario": "S3",
+      "Name": "[S3] Initech Platform Proposal",
+      "account": "[S3] Initech",
+      "StageName": "Prospecting -> Proposal/Price Quote",
+      "lines": [
+        {
+          "product": "NS-CORE-COMM",
+          "Quantity": 25,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    },
+    {
+      "scenario": "S4",
+      "Name": "[S4] Stark Enterprise Deal",
+      "account": "[S4] Stark Industries",
+      "StageName": "Prospecting",
+      "Implementation_Package__c": "Enterprise",
+      "Support_Tier__c": "Premium Enterprise",
+      "lines": [
+        {
+          "product": "NS-CORE-ENT",
+          "Quantity": 50,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    },
+    {
+      "scenario": "S5",
+      "Name": "[S5] Wayne Standard Deal",
+      "account": "[S5] Wayne Enterprises",
+      "StageName": "Prospecting -> Closed Won",
+      "lines": [
+        {
+          "product": "NS-CORE-COMM",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    },
+    {
+      "scenario": "S6",
+      "Name": "[S6] Umbrella AI Dispatch Deal",
+      "account": "[S6] Umbrella Corp",
+      "StageName": "Prospecting -> Closed Won",
+      "lines": [
+        {
+          "product": "NS-CORE-COMM",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        },
+        {
+          "product": "NS-ADD-AIDISPATCH",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    },
+    {
+      "scenario": "S7",
+      "Name": "[S7] Soylent Initial Deal",
+      "account": "[S7] Soylent Corp",
+      "StageName": "Prospecting",
+      "note": "Renewal source only — supplies Subscription_Term_Months__c to RenewalService.",
+      "Subscription_Term_Months__c": "12 Months"
+    }
+  ]
+}

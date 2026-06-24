@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Source_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >Lookup to the Contract this renewal opportunity is renewing. Populated by the renewal-creation job when Auto_Renewal_Enabled__c is true. Drives the renewal motion in reports and the renewal flow.</description>
+    <inlineHelpText
+  >The Contract being renewed. Populated by the renewal job; manual override allowed.</inlineHelpText>
+    <label>Renewal Source Contract</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Renewal Opportunities</relationshipLabel>
+    <relationshipName>Renewal_Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

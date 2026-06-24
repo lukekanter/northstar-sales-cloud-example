@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <!--
+            Northstar Case routing. The Billing entry and the
+            Routing_Reason__c stamp were added later.
+            Order matters: Salesforce evaluates entries top-down and stops at the
+            first match. The Billing entry is FIRST so a Billing case never falls
+            through to a later category entry (it closes the gap — the
+            Finance/Support queue now exists as Finance_Support_Queue).
+            Routing_Reason__c is NOT stamped here — AssignmentRule has no native
+            arbitrary-field update; CaseTriggerHandler stamps it from
+            Case_Routing_Reason__mdt after the rule fires (the Case mirror of the
+            Lead pattern, added because the original routing
+            shipped without it).
+        -->
+        <ruleEntry>
+            <assignedTo>Finance_Support_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Category__c</field>
+                <operation>equals</operation>
+                <value>Billing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Provisioning_Exceptions_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Category__c</field>
+                <operation>equals</operation>
+                <value>Provisioning</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Renewal_Risk_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Category__c</field>
+                <operation>equals</operation>
+                <value>Renewal Risk</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

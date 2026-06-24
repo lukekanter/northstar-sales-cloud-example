@@ -1,0 +1,19 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "northstar-sales-cloud-example",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "66.0",
+  "replacements": [
+    {
+      "filename": "force-app/main/default/dashboards/**/*.dashboard-meta.xml",
+      "stringToReplace": "@@DASHBOARD_RUNNING_USER@@",
+      "replaceWithEnv": "NS_DASHBOARD_RUNNING_USER"
+    }
+  ]
+}

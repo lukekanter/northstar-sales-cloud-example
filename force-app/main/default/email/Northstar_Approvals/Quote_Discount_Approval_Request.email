@@ -1,0 +1,10 @@
+A quote's blended line discount exceeds the Deal Desk threshold and requires approval.
+
+Quote: {!Quote.Name}
+Quote Number: {!Quote.QuoteNumber}
+Total Discount %: {!Quote.Total_Discount_Percent__c}
+Discount Approval Status: {!Quote.Discount_Approval_Status__c}
+
+Please review the discount and approve or reject in Salesforce.
+
+— Northstar Deal Desk automation

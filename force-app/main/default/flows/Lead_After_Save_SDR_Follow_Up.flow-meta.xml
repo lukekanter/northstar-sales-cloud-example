@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >Northstar. When a Lead transitions into Status="Qualified" AND its Lead_Source_Detail__c is an inbound channel, creates a high-priority SDR follow-up Task (Action_Plan_Source__c="SDR Follow Up Flow"). Fires only on a genuine Status transition into Qualified: the Just_Entered_Qualified decision checks $Record__Prior.Status &lt;&gt; "Qualified", so editing an already-Qualified lead's source to an inbound value does NOT spawn a duplicate Task. This matches LeadTriggerHandler.qualifiedTransitionFired. INTENTIONAL overlap with LeadTriggerHandler.buildQualifiedSignalTask — the Apex creates a "Lead Qualified Signal" Task on the same transition for ALL sources; this flow adds the inbound-specific SDR Task. The Task is owned by the Lead owner when that is a user (Leads can be queue-owned and Tasks cannot, so queue-owned leads fall back to the running user).</description>
+    <environments>Default</environments>
+    <decisions>
+        <name>Just_Entered_Qualified</name>
+        <label>Status Just Changed to Qualified?</label>
+        <locationX>176</locationX>
+        <locationY>168</locationY>
+        <defaultConnectorLabel>Already Qualified</defaultConnectorLabel>
+        <rules>
+            <name>Qualified_Transition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>WasNotQualifiedBefore</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_SDR_Follow_Up_Task</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>FollowUpOwnerId</name>
+        <dataType>String</dataType>
+        <expression
+    >IF(BEGINS({!$Record.OwnerId}, "005"), {!$Record.OwnerId}, {!$User.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>WasNotQualifiedBefore</name>
+        <dataType>Boolean</dataType>
+        <expression
+    >TEXT({!$Record__Prior.Status}) &lt;&gt; "Qualified"</expression>
+    </formulas>
+    <interviewLabel
+  >Lead After Save - SDR Follow Up {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead After Save - SDR Follow Up</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_SDR_Follow_Up_Task</name>
+        <label>Create SDR Follow-Up Task</label>
+        <locationX>176</locationX>
+        <locationY>288</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Action_Plan_Source__c</field>
+            <value>
+                <stringValue>SDR Follow Up Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>FollowUpOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>SDR follow-up: qualified inbound lead</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>false</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Just_Entered_Qualified</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria
+    >true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Qualified</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Inbound Form</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Inbound MQL</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Trial Signup</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Content Download</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Webinar</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead_Source_Detail__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paid Search</stringValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

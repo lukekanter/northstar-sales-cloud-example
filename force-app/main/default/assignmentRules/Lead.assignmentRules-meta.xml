@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <!--
+            Northstar Lead routing.
+            Order matters: Salesforce evaluates entries top-down and stops at the first match.
+            Partner attribution wins over segment routing so referred leads always
+            land with the partner SDR.
+            Routing_Reason__c is NOT stamped here — AssignmentRule has no native
+            arbitrary-field update; that stamp is deferred to the Lead trigger.
+        -->
+        <ruleEntry>
+            <assignedTo>Partner_Referral_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula
+      >OR(NOT(ISBLANK(Partner_Account__c)), ISPICKVAL(LeadSource, &quot;Partner Referral&quot;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Inbound_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Customer_Segment__c</field>
+                <operation>equals</operation>
+                <value>Enterprise</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Inbound_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Customer_Segment__c</field>
+                <operation>equals</operation>
+                <value>Commercial</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>NA West</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Inbound_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>TRUE</formula>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

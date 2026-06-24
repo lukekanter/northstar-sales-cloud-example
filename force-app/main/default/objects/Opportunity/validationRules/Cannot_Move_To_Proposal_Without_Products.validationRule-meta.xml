@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Move_To_Proposal_Without_Products</fullName>
+    <active>true</active>
+    <description>An Opportunity cannot advance to Proposal/Price Quote without at least one product line. Intentional overlap with OpportunityTriggerHandler's soft check — the rule is the platform-enforced backstop.</description>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(StageName)) &amp;&amp; ISPICKVAL(StageName, &quot;Proposal/Price Quote&quot;) &amp;&amp; NOT(HasOpportunityLineItem)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Add at least one product before moving this Opportunity to Proposal/Price Quote.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Primary_Contact_Role__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True when this Opportunity has at least one OpportunityContactRole with IsPrimary = true. Stamped by OpportunityTriggerHandler on save so the Negotiation_Requires_Primary_Contact validation rule can gate the Negotiation transition — a validation rule cannot traverse to child OpportunityContactRole records.</description>
+    <inlineHelpText
+  >Maintained by the Opportunity trigger — do not edit manually.</inlineHelpText>
+    <label>Has Primary Contact Role</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

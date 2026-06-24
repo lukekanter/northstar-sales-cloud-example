@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Referral</fullName>
+    <active>true</active>
+    <businessProcess>Northstar_Lead_Process</businessProcess>
+    <description
+  >Leads referred by a partner. Routes through the Partner Referral queue; carries Partner_Account__c.</description>
+    <label>Partner Referral</label>
+</RecordType>

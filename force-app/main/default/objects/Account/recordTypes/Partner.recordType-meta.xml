@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner</fullName>
+    <active>true</active>
+    <description>Channel and consulting partners. Distinct UX and layout from direct customers.</description>
+    <label>Partner</label>
+</RecordType>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Level__c</fullName>
+    <description
+  >Assessed renewal risk level. Expected values: Low, Medium, High, Critical. (Platform-event fields cannot be Picklists, so this is Text with an enumerated convention.)</description>
+    <label>Risk Level</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+</CustomField>

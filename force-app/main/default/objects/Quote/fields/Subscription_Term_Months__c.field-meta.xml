@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Term_Months__c</fullName>
+    <description
+  >Subscription length in months on this quote, copied from the parent Opportunity by the quote-creation flow. Backed by Northstar_Subscription_Term GVS so renewal/end-date/TCV calculations share one source.</description>
+    <inlineHelpText
+  >How long the subscription lasts on this quote.</inlineHelpText>
+    <label>Subscription Term (Months)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Subscription_Term</valueSetName>
+    </valueSet>
+</CustomField>

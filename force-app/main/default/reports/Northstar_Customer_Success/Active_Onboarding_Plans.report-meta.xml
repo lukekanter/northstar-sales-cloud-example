@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>ActionPlan__c.Opportunity__c</field>
+    </columns>
+    <columns>
+        <field>ActionPlan__c.StartDate__c</field>
+    </columns>
+    <columns>
+        <field>ActionPlan__c.Completed__c</field>
+    </columns>
+    <columns>
+        <field>ActionPlan__c.Total__c</field>
+    </columns>
+    <description>In-flight onboarding action plans: linked to an opportunity and not all tasks complete (Completed &lt; Total). Plan-grain (standard Action Plans report type, no task join) so the count is one per plan, for the Customer Onboarding dashboard.</description>
+    <filter>
+        <criteriaItems>
+            <column>ActionPlan__c.Opportunity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ActionPlan__c.Completed__c</column>
+            <columnToColumn>true</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>ActionPlan__c.Total__c</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Active Onboarding Plans</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$ActionPlan__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

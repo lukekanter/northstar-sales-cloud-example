@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <description>Sales region to match. Inline value set duplicating Northstar_Region GVS (GVS not supported on MDT — see Segment__c).</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Sales region this rule applies to.</inlineHelpText>
+    <label>Region</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NA West</fullName>
+                <default>false</default>
+                <label>NA West</label>
+            </value>
+            <value>
+                <fullName>NA East</fullName>
+                <default>false</default>
+                <label>NA East</label>
+            </value>
+            <value>
+                <fullName>NA Central</fullName>
+                <default>false</default>
+                <label>NA Central</label>
+            </value>
+            <value>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+                <label>EMEA</label>
+            </value>
+            <value>
+                <fullName>APAC</fullName>
+                <default>false</default>
+                <label>APAC</label>
+            </value>
+            <value>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+                <label>LATAM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

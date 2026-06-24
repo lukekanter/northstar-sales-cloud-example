@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >Northstar. Record-triggered (after create) on Provisioning EXCEPTION Cases (Case_Category__c = "Provisioning" AND Provisioning_Failure_Reason__c populated — the failure Cases ProvisioningCompletedSubscriber raises on Failure/Partial provisioning events). The routine "AI Dispatch provisioning setup" Cases ProvisioningService creates on order activation carry no Provisioning_Failure_Reason__c, so they are excluded. Looks up the "At-Risk Customer Escalation" template by name to get its Id (ActionPlanCreateInvocable binds templateNameOrID to an Id field, so a name string throws) and, when that template record exists, creates the Action Plan via ActionPlanCreateInvocable related to the Case, so Customer Success runs the escalation playbook. INTENTIONAL overlap with CaseTriggerHandler routing/notification — both run.</description>
+    <environments>Default</environments>
+    <actionCalls>
+        <name>Create_Escalation_Action_Plan</name>
+        <label>Create At-Risk Escalation Action Plan</label>
+        <locationX>176</locationX>
+        <locationY>408</locationY>
+        <actionName>ActionPlanCreateInvocable</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>relatedRecordID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>templateNameOrID</name>
+            <value>
+                <elementReference>Get_Template_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>daysToActionPlanStart</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <decisions>
+        <name>Template_Exists</name>
+        <label>Template Record Exists?</label>
+        <locationX>176</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Not Seeded Yet</defaultConnectorLabel>
+        <rules>
+            <name>Template_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Template_Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Escalation_Action_Plan</targetReference>
+            </connector>
+            <label>Template Found</label>
+        </rules>
+    </decisions>
+    <interviewLabel
+  >Action Plan From Provisioning Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Action Plan From Provisioning Case</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Template_Record</name>
+        <label>Get Action Plan Template by Name</label>
+        <locationX>176</locationX>
+        <locationY>168</locationY>
+        <assignNullValuesIfNoRecordsFound
+    >false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>At-Risk Customer Escalation</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ActionPlanTemplate__c</object>
+        <connector>
+            <targetReference>Template_Exists</targetReference>
+        </connector>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Template_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Provisioning</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Provisioning_Failure_Reason__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

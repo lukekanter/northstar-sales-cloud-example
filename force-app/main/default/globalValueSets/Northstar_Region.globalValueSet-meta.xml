@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NA West</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>NA West</label>
+    </customValue>
+    <customValue>
+        <fullName>NA East</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>NA East</label>
+    </customValue>
+    <customValue>
+        <fullName>NA Central</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>NA Central</label>
+    </customValue>
+    <customValue>
+        <fullName>EMEA</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>EMEA</label>
+    </customValue>
+    <customValue>
+        <fullName>APAC</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>LATAM</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>LATAM</label>
+    </customValue>
+    <description
+  >Sales geography used to route and report on accounts, opportunities, and territories across Northstar's coverage areas.</description>
+    <masterLabel>Region</masterLabel>
+</GlobalValueSet>

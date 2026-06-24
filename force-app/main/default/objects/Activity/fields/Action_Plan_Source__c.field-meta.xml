@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Plan_Source__c</fullName>
+    <description
+  >Name of the Northstar Action Plan template that generated this Task. Distinct from the Activity.TaskAPTask__c lookup added by ActionPlansV4 — TaskAPTask__c points to the AP-side task record; this field captures the human-readable template name so reports don't need to join.</description>
+    <inlineHelpText
+  >Which Action Plan template generated this Task. Auto-stamped.</inlineHelpText>
+    <label>Action Plan Source</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

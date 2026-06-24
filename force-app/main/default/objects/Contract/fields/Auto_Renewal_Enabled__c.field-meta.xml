@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Renewal_Enabled__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description
+  >Whether this Contract should auto-spawn a renewal Opportunity via the renewal-creation job. Defaults true; uncheck for opt-out customers. Read in conjunction with Days_To_Renewal__c.</description>
+    <inlineHelpText
+  >Auto-create a renewal Opp when the contract nears its end date.</inlineHelpText>
+    <label>Auto Renewal Enabled</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

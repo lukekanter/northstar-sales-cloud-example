@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >Maps a Queue DeveloperName to the human-readable Routing_Reason__c text stamped on Case by CaseTriggerHandler. The Case mirror of Lead_Routing_Reason__mdt — decouples the audit-stamp text from the AssignmentRule criteria so they cannot silently drift. One row per Queue that Case.assignmentRules-meta.xml can route to. Built in;.</description>
+    <label>Case Routing Reason</label>
+    <pluralLabel>Case Routing Reasons</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

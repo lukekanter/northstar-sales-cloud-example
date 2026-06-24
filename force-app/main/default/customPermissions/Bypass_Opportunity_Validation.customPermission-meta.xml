@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows the holder to close-won an Opportunity without an accepted primary quote (overrides Cannot_Close_Won_Without_Accepted_Quote_Or_Override). Shipped early with so the validation rule compiles; assigns it via permission set.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Opportunity Validation</label>
+</CustomPermission>

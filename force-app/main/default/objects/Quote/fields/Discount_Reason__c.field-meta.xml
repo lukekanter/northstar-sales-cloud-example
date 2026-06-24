@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Reason__c</fullName>
+    <description
+  >Reason for any non-standard discount on this quote. Backed by Northstar_Discount_Reason GVS. Required by the Discount Approval / Services Margin approval processes when the total discount exceeds the segment threshold.</description>
+    <inlineHelpText
+  >Why are we discounting? Required when discount exceeds the segment threshold.</inlineHelpText>
+    <label>Discount Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Discount_Reason</valueSetName>
+    </valueSet>
+</CustomField>

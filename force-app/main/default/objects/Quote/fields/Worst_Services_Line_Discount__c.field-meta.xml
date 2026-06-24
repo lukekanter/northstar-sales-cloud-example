@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Worst_Services_Line_Discount__c</fullName>
+    <description
+  >The deepest discount (%) among the Quote's Services lines, stamped each save by QuoteTriggerHandler. Persisted so the next save can detect a worsening services-margin position and re-open a recorded Finance approval — the finance analogue of the blended-discount re-open. Automation-only.</description>
+    <inlineHelpText
+  >Deepest Services-line discount. Trigger-maintained; drives Finance re-approval when services pricing worsens.</inlineHelpText>
+    <label>Worst Services Line Discount</label>
+    <precision>5</precision>
+    <scale>2</scale>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

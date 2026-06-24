@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template_Name__c</fullName>
+    <description
+  >Quicker Quotes: display label for this Quote PDF template option in the flow's picker.</description>
+    <externalId>false</externalId>
+    <label>Template Name</label>
+    <length>255</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

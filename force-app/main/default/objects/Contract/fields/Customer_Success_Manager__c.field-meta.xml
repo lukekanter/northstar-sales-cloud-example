@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Success_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The CSM owning the post-sale relationship for this Contract. Set on Contract creation (typically from a routing rule keyed on Account.Customer_Segment__c + Account.Region__c) and used by renewal/escalation alerts.</description>
+    <inlineHelpText
+  >The Customer Success Manager owning this account post-sale.</inlineHelpText>
+    <label>Customer Success Manager</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>CSM Contracts</relationshipLabel>
+    <relationshipName>CSM_Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

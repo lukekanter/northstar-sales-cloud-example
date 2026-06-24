@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Line_Item_Field__c</fullName>
+    <description
+  >API name of the target QuoteLineItem field to copy INTO (e.g. Revenue_Type__c). Must be writeable on QuoteLineItem; COPY_QuoteLineItemTriggerHandler sets it via SObject.put in before-context.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >API name of the QuoteLineItem field to copy into.</inlineHelpText>
+    <label>Quote Line Item Field</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

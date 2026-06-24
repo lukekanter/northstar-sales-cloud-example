@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Tier__c</fullName>
+    <description
+  >Support tier the customer is entitled to under this Order. Backed by Northstar_Support_Tier GVS. Mirrored from Quote.Premium_Support_Tier__c at Order creation and copied onto the resulting Contract.</description>
+    <inlineHelpText>Entitled support tier for this Order.</inlineHelpText>
+    <label>Support Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Support_Tier</valueSetName>
+    </valueSet>
+</CustomField>

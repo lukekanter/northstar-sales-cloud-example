@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Premium_Support_Tier__c</fullName>
+    <description
+  >Premium support tier quoted on this proposal. Backed by Northstar_Support_Tier GVS. Named with the Premium_ prefix on Quote (vs Support_Tier__c on Opp/Account) per to make Quicker-Quotes-driven UI fields distinguishable in reports.</description>
+    <inlineHelpText>Premium support tier being quoted.</inlineHelpText>
+    <label>Premium Support Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Support_Tier</valueSetName>
+    </valueSet>
+</CustomField>

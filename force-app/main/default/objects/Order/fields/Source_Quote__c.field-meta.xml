@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Quote__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The accepted Quote on the source Opportunity that the Order was generated from. Set by the Order-creation wrapper alongside Source_Opportunity__c.</description>
+    <inlineHelpText
+  >The accepted Quote this Order was generated from.</inlineHelpText>
+    <label>Source Quote</label>
+    <referenceTo>Quote</referenceTo>
+    <relationshipLabel>Generated Orders</relationshipLabel>
+    <relationshipName>Generated_Orders</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

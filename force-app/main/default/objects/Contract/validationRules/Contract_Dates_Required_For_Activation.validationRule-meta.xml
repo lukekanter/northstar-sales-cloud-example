@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Dates_Required_For_Activation</fullName>
+    <active>true</active>
+    <description>A Contract cannot be Activated without a Start Date and an end date — Subscription_End_Date__c when set, else the term-derived standard EndDate.</description>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(Status)) &amp;&amp; ISPICKVAL(Status, &quot;Activated&quot;) &amp;&amp; (ISBLANK(StartDate) || (ISBLANK(Subscription_End_Date__c) &amp;&amp; ISBLANK(EndDate)))</errorConditionFormula>
+    <errorDisplayField>Subscription_End_Date__c</errorDisplayField>
+    <errorMessage>A Contract cannot be activated without a Start Date and an end date (Subscription End Date or a term-derived End Date).</errorMessage>
+</ValidationRule>

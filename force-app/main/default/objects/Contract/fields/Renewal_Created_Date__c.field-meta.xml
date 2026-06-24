@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Created_Date__c</fullName>
+    <description
+  >The date the renewal-creation job spawned the renewal Opportunity. Distinct from Renewal_Opportunity__c.CreatedDate (which gets touched by manual edits); this is the canonical "renewal was attempted" marker.</description>
+    <inlineHelpText
+  >When the renewal job ran. Auto-stamped — do not edit.</inlineHelpText>
+    <label>Renewal Created Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

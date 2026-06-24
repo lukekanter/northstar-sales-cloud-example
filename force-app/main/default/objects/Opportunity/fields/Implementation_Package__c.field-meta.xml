@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Package__c</fullName>
+    <description
+  >Implementation engagement bundled with this opportunity (Quickstart, Enterprise, None). Backed by Northstar_Implementation_Package GVS. Read by the Order provisioning trigger.</description>
+    <inlineHelpText
+  >Implementation engagement attached. Drives Provisioning Requested event payload.</inlineHelpText>
+    <label>Implementation Package</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Implementation_Package</valueSetName>
+    </valueSet>
+</CustomField>

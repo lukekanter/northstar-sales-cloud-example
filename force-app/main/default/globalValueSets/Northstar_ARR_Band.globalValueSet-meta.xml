@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Under 50K</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>&lt; $50K</label>
+    </customValue>
+    <customValue>
+        <fullName>50K to 250K</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>$50K - $250K</label>
+    </customValue>
+    <customValue>
+        <fullName>250K to 1M</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>$250K - $1M</label>
+    </customValue>
+    <customValue>
+        <fullName>1M plus</fullName>
+        <default>false</default>
+        <isActive>true</isActive>
+        <label>$1M+</label>
+    </customValue>
+    <description
+  >Annual Recurring Revenue band bucketing Opportunity.ARR__c (falling back to Amount when ARR is null). Stamped by OpportunityTriggerHandler. API values are the exact strings OpportunityTriggerHandler.bandForArr emits — keep them in sync if a band is added.</description>
+    <masterLabel>Northstar ARR Band</masterLabel>
+</GlobalValueSet>

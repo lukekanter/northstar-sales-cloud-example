@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The Account record of the partner who referred this lead, when Lead_Source_Detail__c is "Partner Referral". Used for partner-attribution reporting and to carry the partner association onto the converted Opportunity.</description>
+    <inlineHelpText
+  >Referring partner Account. Required when Lead Source Detail is "Partner Referral".</inlineHelpText>
+    <label>Partner Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Referred Leads</relationshipLabel>
+    <relationshipName>Referred_Leads</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

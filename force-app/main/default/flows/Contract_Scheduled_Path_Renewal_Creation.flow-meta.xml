@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >Northstar. 90 days before a Contract's Subscription_End_Date__c, if it has not already been renewed, calls the RenewalService invocable to create the renewal Opportunity. The invocable owns the metadata-driven tier-window logic and stamps Renewal_Created__c via the Contract trigger, so this flow does not stamp it directly (an out-of-window contract is deferred to RenewalCreationScheduler).</description>
+    <environments>Default</environments>
+    <interviewLabel
+  >Contract Scheduled Path - Renewal Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract Scheduled Path - Renewal Creation</label>
+    <processType>AutoLaunchedFlow</processType>
+    <actionCalls>
+        <name>Create_Renewals</name>
+        <label>Create Renewals (RenewalService invocable)</label>
+        <locationX>176</locationX>
+        <locationY>432</locationY>
+        <actionName>RenewalService</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>contractIds</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Renewal_Not_Yet_Created</name>
+        <label>Renewal Not Yet Created?</label>
+        <locationX>176</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Already Renewed</defaultConnectorLabel>
+        <rules>
+            <name>Not_Renewed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference
+        >$Record.Renewal_Created__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Renewals</targetReference>
+            </connector>
+            <label>Not Renewed</label>
+        </rules>
+    </decisions>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subscription_End_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Days_Before_Renewal</name>
+            <connector>
+                <targetReference>Renewal_Not_Yet_Created</targetReference>
+            </connector>
+            <label>90 Days Before End</label>
+            <offsetNumber>-90</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Subscription_End_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

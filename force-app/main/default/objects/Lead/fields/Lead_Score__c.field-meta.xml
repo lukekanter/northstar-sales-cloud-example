@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Score__c</fullName>
+    <description
+  >Numeric lead score from the scoring model (0-9999). Higher = hotter. Stamped onto Task.Lead_Score_At_Creation__c at SDR-task creation so the score at-the-moment is preserved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Model-driven lead score. Routing uses thresholds; do not edit manually.</inlineHelpText>
+    <label>Lead Score</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

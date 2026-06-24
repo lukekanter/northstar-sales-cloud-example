@@ -1,0 +1,21 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Cases seeded by scripts/apex/seed_sample_data.apex. S8 is seeded directly and escalated via the renewal-risk flow. The S6 provisioning-exception Case is NOT seeded directly — it is raised by ProvisioningCompletedSubscriber when the seed publishes a Failure Provisioning_Completed__e for the S6 order. The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S8",
+      "Subject": "[S8] Hooli renewal at risk",
+      "account": "[S8] Hooli",
+      "Case_Category__c": "Renewal Risk",
+      "Renewal_Risk_Level__c": "Medium -> High",
+      "Escalated_To_Renewal_Queue__c": false,
+      "expected": "Update to High fires Case_After_Save_Renewal_Risk_Escalation — escalation tasks + routed to the Renewal Risk queue + Escalated_To_Renewal_Queue__c = true."
+    },
+    {
+      "scenario": "S6",
+      "Subject": "Provisioning did not complete for order ... (raised by automation)",
+      "account": "[S6] Umbrella Corp",
+      "Case_Category__c": "Provisioning",
+      "note": "Created by ProvisioningCompletedSubscriber from the Failure Provisioning_Completed__e the seed publishes — not seeded directly. Carries Provisioning_Failure_Reason__c and is owned by the Provisioning Exceptions queue."
+    }
+  ]
+}

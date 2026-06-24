@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Activation_Needs_Acct_Contract</fullName>
+    <active>true</active>
+    <description>An Order cannot be Activated without an Account and a Contract. The Order Products requirement is enforced by the platform's native order-activation rule (a VR can't count child OrderItems).</description>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(Status)) &amp;&amp; ISPICKVAL(Status, &quot;Activated&quot;) &amp;&amp; (ISBLANK(AccountId) || ISBLANK(ContractId))</errorConditionFormula>
+    <errorDisplayField>ContractId</errorDisplayField>
+    <errorMessage>An Order cannot be activated without both an Account and a Contract.</errorMessage>
+</ValidationRule>

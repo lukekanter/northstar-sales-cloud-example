@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Finance_Review__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Set by the Opportunity trigger / flow when non-standard payment terms or revenue-recognition concerns are detected. Triggers the Finance Reviewers public group email alert.</description>
+    <inlineHelpText
+  >Check if this deal needs Finance review. Auto-stamped — manual override allowed.</inlineHelpText>
+    <label>Requires Finance Review</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

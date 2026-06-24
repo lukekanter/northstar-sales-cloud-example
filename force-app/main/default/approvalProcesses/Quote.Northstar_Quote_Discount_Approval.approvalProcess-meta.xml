@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Total_Discount_Percent__c</field>
+        <field>Discount_Approval_Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Deal_Desk_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description
+    >Routes to the per-record Deal Desk approver; the Deal Desk group receives the email alert.</description>
+        <label>Deal Desk Discount Approval</label>
+        <name>Deal_Desk_Discount_Approval</name>
+    </approvalStep>
+    <description
+  >Deal Desk approval for Quotes whose blended line discount exceeds the threshold. Gives the blended-discount dimension its own Quote-level gate so a discounted Quote can't be Accepted without Deal Desk sign-off. Keys off the independent Discount_Approval_Status__c dimension; final approval stamps it Approved so the Discount_Approval_Required_For_Accept validation rule passes — without satisfying the legal or finance gates. Complements the Opportunity-level Northstar Discount Approval (reason/amount based).</description>
+    <emailTemplate
+  >Northstar_Approvals/Quote_Discount_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula
+    >OR(ISPICKVAL(Discount_Approval_Status__c, "Pending"), ISPICKVAL(Discount_Approval_Status__c, "Rejected"))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Northstar_Quote_Discount_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Northstar_Quote_Discount_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Northstar_Quote_Discount_Approval_Alert</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Northstar Quote Discount Approval</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

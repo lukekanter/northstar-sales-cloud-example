@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Desk_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >Approver for the Non-Standard Terms / Services Margin approval processes on this Quote. Set by segment via the routing flow and used as the `relatedUserField` approver. Replaces the dropped Deal Desk queues for Quote-based review.</description>
+    <inlineHelpText
+  >The user who approves non-standard terms / services margin on this Quote.</inlineHelpText>
+    <label>Deal Desk Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Deal Desk Approvals (Quote)</relationshipLabel>
+    <relationshipName>Deal_Desk_Approval_Quotes</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

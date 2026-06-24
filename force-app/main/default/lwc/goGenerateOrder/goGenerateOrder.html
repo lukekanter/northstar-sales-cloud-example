@@ -1,0 +1,17 @@
+<template>
+  <div class="slds-p-around_medium slds-align_absolute-center">
+    <template lwc:if={loading}>
+      <lightning-spinner
+        alternative-text="Generating order"
+        size="small"
+      ></lightning-spinner>
+      <span class="slds-m-left_small">Generating order…</span>
+    </template>
+    <template lwc:if={errorMessage}>
+      <div class="slds-text-color_error slds-m-bottom_small" role="alert">
+        {errorMessage}
+      </div>
+      <lightning-button label="Close" onclick={handleClose}></lightning-button>
+    </template>
+  </div>
+</template>

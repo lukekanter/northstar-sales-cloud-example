@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <description>Account customer segment to match. Inline value set duplicating Northstar_Customer_Segment GVS — Salesforce does not allow GVS on Custom Metadata Type fields, so MDT picklist values are maintained alongside the GVS. Keep in sync if either changes.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Customer segment this routing rule applies to.</inlineHelpText>
+    <label>Segment</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>SMB</fullName>
+                <default>false</default>
+                <label>SMB</label>
+            </value>
+            <value>
+                <fullName>Partner Managed</fullName>
+                <default>false</default>
+                <label>Partner Managed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

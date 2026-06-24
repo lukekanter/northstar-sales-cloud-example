@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_AI_Dispatch_Interest__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True when the lead has expressed interest in the AI Dispatch add-on. Pre-qualifies the converted Opportunity for the AI Dispatch provisioning path (Provisioning_Requested__e on Order create).</description>
+    <inlineHelpText
+  >Check if the prospect asked about AI Dispatch. Carries through to Opportunity and shortens the implementation conversation.</inlineHelpText>
+    <label>Requires AI Dispatch Interest</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

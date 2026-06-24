@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Contract_Count__c</fullName>
+    <description
+  >Number of active Contracts on the account. TODO: convert to a roll-up summary on Contract.IsActive once Account-Contract is master-detail (currently a standard lookup, which platform does not allow rollups on). For now this is maintained by the Contract trigger.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Count of currently active contracts. Maintained by the Contract trigger; do not edit manually.</inlineHelpText>
+    <label>Active Contract Count</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

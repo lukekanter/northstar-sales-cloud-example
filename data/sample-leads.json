@@ -1,0 +1,31 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Leads seeded by scripts/apex/seed_sample_data.apex. The Apex script is the runtime source of truth (it also drives Update-triggered automation and Lead conversion that a static tree file can't express). Keep in sync with that script.",
+  "records": [
+    {
+      "scenario": "S1",
+      "intent": "Inbound Commercial Lead — assignment rule routes to the Inbound SDR queue; Qualified + inbound source fires the SDR follow-up task.",
+      "LastName": "[S1] Inbound",
+      "FirstName": "Dana",
+      "Company": "Acme Logistics",
+      "Customer_Segment__c": "Commercial",
+      "Region__c": "NA West",
+      "LeadSource": "Web",
+      "Lead_Source_Detail__c": "Inbound Form",
+      "Lead_Score__c": 60,
+      "Status": "Open - Not Contacted -> Qualified"
+    },
+    {
+      "scenario": "S2",
+      "intent": "Enterprise Lead converted to Account + Contact + Opportunity ([S2] Globex Enterprise Expansion).",
+      "LastName": "[S2] Enterprise",
+      "FirstName": "Priya",
+      "Company": "Globex Corporation",
+      "Customer_Segment__c": "Enterprise",
+      "Region__c": "NA East",
+      "LeadSource": "Web",
+      "Lead_Source_Detail__c": "Content Download",
+      "Lead_Score__c": 85,
+      "Status": "Qualified -> Converted"
+    }
+  ]
+}

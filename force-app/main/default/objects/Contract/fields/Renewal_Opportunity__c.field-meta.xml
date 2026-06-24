@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >The renewal Opportunity that the renewal-creation job spawned from this Contract. Inverse of Opportunity.Renewal_Source_Contract__c. Null until the renewal has been created.</description>
+    <inlineHelpText
+  >The renewal Opportunity created from this Contract.</inlineHelpText>
+    <label>Renewal Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Renewal Source Contracts</relationshipLabel>
+    <relationshipName>Renewal_Source_Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

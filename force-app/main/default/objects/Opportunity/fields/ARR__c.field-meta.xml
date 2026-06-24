@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARR__c</fullName>
+    <description
+  >Annual Recurring Revenue. Stored field stamped by the Opportunity revenue trigger by summing the recurring OLIs (Revenue_Type__c IN ('Subscription','Usage')) and prorating to a 12-month base.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Annual recurring revenue ($). Maintained by the revenue trigger — do not edit manually.</inlineHelpText>
+    <label>ARR</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

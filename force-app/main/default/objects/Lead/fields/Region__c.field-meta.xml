@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <description
+  >Northstar sales region for the lead. Same Northstar_Region GVS as Account.Region__c so region carries through on Lead conversion.</description>
+    <inlineHelpText
+  >Sales region used for SDR routing and pipeline reporting.</inlineHelpText>
+    <label>Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Region</valueSetName>
+    </valueSet>
+</CustomField>

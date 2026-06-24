@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Risk_Process</fullName>
+    <description>Status flow for Renewal Risk cases (raised by Renewal_Risk_Raised__e). Escalation to the Renewal Risk queue is tracked via the Case.Escalated_To_Renewal_Queue__c checkbox; this process tracks the case's own lifecycle.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Working</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

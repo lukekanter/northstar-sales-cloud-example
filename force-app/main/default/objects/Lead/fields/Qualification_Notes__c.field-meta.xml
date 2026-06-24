@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualification_Notes__c</fullName>
+    <description
+  >Long-form notes captured by the SDR during lead qualification (BANT/MEDDIC summary, pain points, current tools, next steps). Surfaces on Opportunity after conversion to give the AE the qualification context.</description>
+    <inlineHelpText
+  >SDR's qualification narrative. Carries through to the converted Opportunity.</inlineHelpText>
+    <label>Qualification Notes</label>
+    <length>32768</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

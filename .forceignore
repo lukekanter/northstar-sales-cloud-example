@@ -1,0 +1,51 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Non-deployable retrieved baseline. These were retrieved as DE-org defaults,
+# are NOT project deploy targets, and the org rejects them on deploy. They also
+# drift every Salesforce platform release. Excluding them scopes deploy/manifest
+# generation to project-authored metadata only.
+#
+# Profiles: the project's personas are permission-set based; the only profile it
+# deploys is "Custom: Sales Profile". All other retrieved profiles are reference
+# — and the standard ones reject the platform-added "Integration Intelligence
+# User" permission ("may not modify ... while editing a Standard Profile"),
+# while "Custom: Marketing/Support Profile" carry it under a license that
+# disallows it.
+force-app/main/default/profiles/*
+!force-app/main/default/profiles/Custom%3A Sales Profile.profile-meta.xml
+
+# DataKnowledge* (Data Cloud baseline objects + their sharing rules): retrieved
+# DE-org defaults that are non-deployable reference state (none are
+# project-authored — all five are 0-field bootstrap retrieves) and drift each
+# platform release with "does not resolve to a valid sObject type" / "Required
+# field is missing: sharingCriteriaRules". The wildcard covers all current and
+# future variants.
+force-app/main/default/objects/DataKnowledge*/**
+force-app/main/default/sharingRules/DataKnowledge*.sharingRules-meta.xml
+
+# Settings the current org API rejects on deploy (schema changed under us):
+# UIBundle ("Element webAppOptIn invalid") and CaseSettings ("rtaCaseDescription").
+force-app/main/default/settings/UIBundle.settings-meta.xml
+force-app/main/default/settings/Case.settings-meta.xml
+
+# AppSwitcher AppMenu: the App Launcher menu must list EVERY app in the org, so
+# the retrieved baseline rejects on deploy once the org gains an app the snapshot
+# doesn't list ("For AppSwitcherAppMenu, all apps must be in the app menu"). This
+# is org drift, not project-authored metadata. The sibling Salesforce1 AppMenu
+# deploys fine, so only AppSwitcher is excluded; nothing in the project authors
+# the App Launcher.
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml

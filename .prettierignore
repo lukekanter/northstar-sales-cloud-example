@@ -1,0 +1,20 @@
+# List files or directories below to ignore them when running prettier
+# More information: https://prettier.io/docs/en/ignore.html
+#
+
+**/staticresources/**
+.localdevserver
+.sfdx
+.sf
+.vscode
+
+coverage/
+
+# Salesforce metadata under force-app/ is NOT prettier-formatted:
+#   - Retrieved standard metadata is reference state and drifts each platform
+#     release; reformatting it churns thousands of files and risks deploy-time
+#     diffs. The CLI's native (`sf project retrieve`) format is the contract.
+#   - The vendored open-source accelerators keep their upstream formatting.
+#   Our own Apex/LWC is kept clean by convention; eslint (`npm run lint`) covers
+#   it. Prettier governs the project's docs, scripts, and config.
+force-app/

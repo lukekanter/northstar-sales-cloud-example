@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bypass_Reason__c</fullName>
+    <description
+  >Why automation is being bypassed for this object (typically an incident ticket / explanation). Helps auditors understand the duration and reason after the fact.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+  >Why this bypass exists. Link to a ticket if applicable.</inlineHelpText>
+    <label>Bypass Reason</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

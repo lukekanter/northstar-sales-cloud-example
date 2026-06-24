@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Northstar_Compact</fullName>
+    <fields>CaseNumber</fields>
+    <fields>Status</fields>
+    <fields>Priority</fields>
+    <fields>Case_Category__c</fields>
+    <fields>Renewal_Risk_Level__c</fields>
+    <fields>Routing_Reason__c</fields>
+    <label>Northstar Compact</label>
+</CompactLayout>

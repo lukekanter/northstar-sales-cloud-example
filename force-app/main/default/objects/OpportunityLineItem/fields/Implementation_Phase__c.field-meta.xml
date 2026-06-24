@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Phase__c</fullName>
+    <description
+  >Which delivery phase consumes this line item (Phase 1, Phase 2, Phase 3, Ongoing). Inline picklist (project-specific labels, kept off the global GVS). Copied onto the corresponding QuoteLineItem and OrderItem via the Copy-OLI-to-QLI accelerator.</description>
+    <inlineHelpText
+  >Which implementation phase this line item belongs to.</inlineHelpText>
+    <label>Implementation Phase</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phase 1</fullName>
+                <default>true</default>
+                <label>Phase 1</label>
+            </value>
+            <value>
+                <fullName>Phase 2</fullName>
+                <default>false</default>
+                <label>Phase 2</label>
+            </value>
+            <value>
+                <fullName>Phase 3</fullName>
+                <default>false</default>
+                <label>Phase 3</label>
+            </value>
+            <value>
+                <fullName>Ongoing</fullName>
+                <default>false</default>
+                <label>Ongoing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

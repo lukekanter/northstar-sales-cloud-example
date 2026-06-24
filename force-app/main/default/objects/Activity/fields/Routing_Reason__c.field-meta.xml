@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routing_Reason__c</fullName>
+    <description
+  >Free-text capture of why this Task was assigned to its current owner. Stamped by the SDR/CS task-creation flows so leadership can audit routing decisions without diving into flow logs.</description>
+    <inlineHelpText
+  >Why this Task was routed where it was. Auto-stamped.</inlineHelpText>
+    <label>Routing Reason</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

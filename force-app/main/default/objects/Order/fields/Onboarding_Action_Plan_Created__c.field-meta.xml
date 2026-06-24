@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Action_Plan_Created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True once the Action Plan creation flow has spawned a Northstar Onboarding Action Plan for this Order. Used to make the flow idempotent on re-fire.</description>
+    <inlineHelpText
+  >Set by the onboarding Action Plan flow once it has run for this Order.</inlineHelpText>
+    <label>Onboarding Action Plan Created</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

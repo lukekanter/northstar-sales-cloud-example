@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Won_Requires_Accepted_Quote</fullName>
+    <active>true</active>
+    <description>Cannot close won without an accepted primary quote unless the user holds the Bypass_Opportunity_Validation custom permission (shipped with this rule; assigns it).</description>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(StageName)) &amp;&amp; ISPICKVAL(StageName, &quot;Closed Won&quot;) &amp;&amp; NOT(Primary_Quote_Accepted__c) &amp;&amp; NOT($Permission.Bypass_Opportunity_Validation)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Closed Won requires an accepted primary quote. Obtain the Bypass Opportunity Validation permission to override.</errorMessage>
+</ValidationRule>

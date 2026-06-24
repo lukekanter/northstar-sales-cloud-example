@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Influenced__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Mirrors Account.Partner_Influenced__c onto the opportunity for pipeline and partner-attribution reports. Stamped by the Opportunity trigger on create / Account change.</description>
+    <inlineHelpText
+  >True if a partner influenced this deal. Mirrored from Account.</inlineHelpText>
+    <label>Partner Influenced</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

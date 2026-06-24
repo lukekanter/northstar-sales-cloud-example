@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Lead</fullName>
+    <active>true</active>
+    <businessProcess>Northstar_Lead_Process</businessProcess>
+    <description
+  >Leads captured at events / field activity. SDR follow-up under stricter SLA.</description>
+    <label>Event Lead</label>
+</RecordType>

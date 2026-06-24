@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Segment__c</fullName>
+    <description
+  >Denormalized "Region - Customer Segment" string (e.g. "NAMER - Enterprise"), a denormalized routing key used for territory-style routing. Kept in sync by the Account trigger when Region__c or Customer_Segment__c changes.</description>
+    <inlineHelpText
+  >Auto-stamped territory string in the form "Region - Segment". Do not edit manually; updated by the Account trigger.</inlineHelpText>
+    <label>Territory Segment</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

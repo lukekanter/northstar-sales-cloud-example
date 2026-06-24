@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services_Agreement</fullName>
+    <active>true</active>
+    <description
+  >Services-only contract (implementation, training).</description>
+    <label>Services Agreement</label>
+</RecordType>

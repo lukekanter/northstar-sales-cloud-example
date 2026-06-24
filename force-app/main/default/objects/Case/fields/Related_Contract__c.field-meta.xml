@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description
+  >For Case_Category__c = 'Renewal Risk': the Contract at risk. Stamped by the Renewal_Risk_Raised__e subscriber when raising a renewal-risk Case.</description>
+    <inlineHelpText
+  >The Contract this Case is about (for Renewal Risk category).</inlineHelpText>
+    <label>Related Contract</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Related Cases</relationshipLabel>
+    <relationshipName>Related_Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

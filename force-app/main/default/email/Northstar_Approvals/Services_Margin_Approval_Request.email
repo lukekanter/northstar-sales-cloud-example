@@ -1,0 +1,10 @@
+A quote contains an implementation-services line priced below the margin floor and requires Finance review.
+
+Quote: {!Quote.Name}
+Quote Number: {!Quote.QuoteNumber}
+Total Discount %: {!Quote.Total_Discount_Percent__c}
+Finance Approval Status: {!Quote.Finance_Approval_Status__c}
+
+Please review the services margin and approve or reject in Salesforce.
+
+— Northstar Finance automation

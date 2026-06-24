@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Motion__c</fullName>
+    <description
+  >The sales motion that produced this Order (New Logo, Expansion, Renewal, Services Only, Partner Sourced). Backed by Northstar_Sales_Motion GVS. Mirrored from the source Opportunity at Order creation; immutable thereafter so Order-level reporting always reflects the original motion.</description>
+    <inlineHelpText
+  >Locked sales motion for this Order — mirrors the source Opportunity.</inlineHelpText>
+    <label>Sales Motion</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Sales_Motion</valueSetName>
+    </valueSet>
+</CustomField>

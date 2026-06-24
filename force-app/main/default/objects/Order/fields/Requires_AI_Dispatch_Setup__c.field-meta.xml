@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_AI_Dispatch_Setup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True when this Order includes any AI Dispatch Add-On line item. Stamped by the Order trigger; consumed by the Provisioning_Requested__e payload so the downstream system can pre-stage AI Dispatch credentials.</description>
+    <inlineHelpText
+  >Auto-set when the Order has an AI Dispatch Add-On line item.</inlineHelpText>
+    <label>Requires AI Dispatch Setup</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

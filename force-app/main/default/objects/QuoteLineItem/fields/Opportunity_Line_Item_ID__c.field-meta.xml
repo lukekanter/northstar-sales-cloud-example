@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Line_Item_ID__c</fullName>
+    <description
+  >Id of the source OpportunityLineItem this QuoteLineItem was auto-created from when a Quote is built from an Opportunity. Populated by the QuoteLineItem workflow rule (formula OpportunityLineItem.Id — an undocumented cross-reference available only during UI auto-creation). Read by COPY_QuoteLineItemTriggerHandler to copy down custom OLI fields. Part of the Copy-OLI-to-QLI accelerator.</description>
+    <externalId>true</externalId>
+    <inlineHelpText
+  >Source OpportunityLineItem Id (set automatically). Used to copy custom fields down to this quote line.</inlineHelpText>
+    <label>Opportunity Line Item ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

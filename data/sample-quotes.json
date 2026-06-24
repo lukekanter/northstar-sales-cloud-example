@@ -1,0 +1,59 @@
+{
+  "_about": "Reviewable mirror of the sample-scenario Quotes (and their line items) seeded by scripts/apex/seed_sample_data.apex. S4 stays Draft and trips the Deal Desk approval gates; S5/S6 are synced + accepted so the Opportunity can move to Closed Won. The Apex script is the runtime source of truth — keep in sync.",
+  "records": [
+    {
+      "scenario": "S4",
+      "Name": "[S4] Stark Discounted Quote",
+      "opportunity": "[S4] Stark Enterprise Deal",
+      "Legal_Terms_Required__c": true,
+      "Discount_Reason__c": "Competitive Replacement",
+      "Status": "Draft",
+      "expected": "Quote trigger stamps Discount_Approval_Status__c / Legal_Approval_Status__c / Finance_Approval_Status__c = Pending; submitted to the Deal Desk discount approval process.",
+      "lines": [
+        {
+          "product": "NS-CORE-ENT",
+          "Quantity": 50,
+          "Discount": 25,
+          "Revenue_Type__c": "Subscription"
+        },
+        {
+          "product": "NS-IMPL-ENT",
+          "Quantity": 1,
+          "Discount": 30,
+          "Revenue_Type__c": "Services"
+        }
+      ]
+    },
+    {
+      "scenario": "S5",
+      "Name": "[S5] Accepted Quote",
+      "opportunity": "[S5] Wayne Standard Deal",
+      "Status": "Draft -> Accepted (synced)",
+      "lines": [
+        {
+          "product": "NS-CORE-COMM",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    },
+    {
+      "scenario": "S6",
+      "Name": "[S6] Accepted Quote",
+      "opportunity": "[S6] Umbrella AI Dispatch Deal",
+      "Status": "Draft -> Accepted (synced)",
+      "lines": [
+        {
+          "product": "NS-CORE-COMM",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        },
+        {
+          "product": "NS-ADD-AIDISPATCH",
+          "Quantity": 20,
+          "Revenue_Type__c": "Subscription"
+        }
+      ]
+    }
+  ]
+}

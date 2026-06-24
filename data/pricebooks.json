@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "Commercial Price Book",
+    "IsActive": true
+  },
+  {
+    "Name": "Enterprise Price Book",
+    "IsActive": true
+  },
+  {
+    "Name": "Partner Price Book",
+    "IsActive": true
+  },
+  {
+    "Name": "Renewal Price Book",
+    "IsActive": true
+  }
+]

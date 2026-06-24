@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Approval_Required_For_Accept</fullName>
+    <active>true</active>
+    <description
+  >a Quote whose blended line discount exceeds the Deal Desk threshold can't be Accepted until the discount is approved. Keys off the independent Discount_Approval_Status__c dimension.</description>
+    <errorConditionFormula
+  >ISPICKVAL(Status, &quot;Accepted&quot;) &amp;&amp; (ISPICKVAL(Discount_Approval_Status__c, &quot;Pending&quot;) || ISPICKVAL(Discount_Approval_Status__c, &quot;Rejected&quot;))</errorConditionFormula>
+    <errorDisplayField>Discount_Approval_Status__c</errorDisplayField>
+    <errorMessage
+  >This Quote's blended discount exceeds the Deal Desk threshold and cannot be Accepted until the discount is approved.</errorMessage>
+</ValidationRule>

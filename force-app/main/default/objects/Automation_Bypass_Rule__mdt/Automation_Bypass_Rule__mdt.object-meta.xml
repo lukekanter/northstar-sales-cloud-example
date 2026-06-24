@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >Org-wide automation-bypass switches, keyed by SObject API name. Read at the top of every trigger / flow. Pairs with the per-user "Bypass Validations" custom permission to give support engineers a metadata-only kill switch when something misbehaves.</description>
+    <label>Automation Bypass Rule</label>
+    <pluralLabel>Automation Bypass Rules</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

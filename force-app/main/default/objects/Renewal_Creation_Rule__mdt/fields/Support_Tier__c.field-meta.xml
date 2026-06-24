@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Tier__c</fullName>
+    <description>Contract support tier this renewal rule applies to. Inline value set duplicating Northstar_Support_Tier GVS (GVS not supported on MDT). Premium tiers typically renew earlier than Standard.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Support tier this renewal rule applies to.</inlineHelpText>
+    <label>Support Tier</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Premium Standard</fullName>
+                <default>false</default>
+                <label>Premium Standard</label>
+            </value>
+            <value>
+                <fullName>Premium Enterprise</fullName>
+                <default>false</default>
+                <label>Premium Enterprise</label>
+            </value>
+            <value>
+                <fullName>24x7</fullName>
+                <default>false</default>
+                <label>24x7</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

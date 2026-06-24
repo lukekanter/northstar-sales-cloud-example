@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Tier__c</fullName>
+    <description
+  >Entitled support tier under this Contract. Backed by Northstar_Support_Tier GVS. Mirrored from Order.Support_Tier__c on Contract creation and read by Case routing to set SLA.</description>
+    <inlineHelpText>Entitled support tier under this Contract.</inlineHelpText>
+    <label>Support Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Support_Tier</valueSetName>
+    </valueSet>
+</CustomField>

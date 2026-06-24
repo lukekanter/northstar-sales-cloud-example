@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Category__c</fullName>
+    <description
+  >Northstar case classification (Customer Support / Billing / Provisioning / Renewal Risk). Drives routing: Provisioning Exceptions and Renewal Risk Cases get owned by their respective queues; the others stay with the inbound owner.</description>
+    <inlineHelpText
+  >Top-level Case classification. Drives routing.</inlineHelpText>
+    <label>Case Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Support</fullName>
+                <default>true</default>
+                <label>Customer Support</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Provisioning</fullName>
+                <default>false</default>
+                <label>Provisioning</label>
+            </value>
+            <value>
+                <fullName>Renewal Risk</fullName>
+                <default>false</default>
+                <label>Renewal Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

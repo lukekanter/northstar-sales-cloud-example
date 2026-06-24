@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Tier__c</fullName>
+    <description
+  >Per-line support tier on this Order. Lets a single Order mix tiers across products. Mirrors OpportunityLineItem.Support_Tier__c.</description>
+    <inlineHelpText
+  >Support tier for this Order line (can differ from the Order default).</inlineHelpText>
+    <label>Support Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Northstar_Support_Tier</valueSetName>
+    </valueSet>
+</CustomField>

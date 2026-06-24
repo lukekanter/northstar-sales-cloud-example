@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Discounted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True when at least one OpportunityLineItem carries a per-line Discount &gt; 0. Rolled up from the OLIs by OpportunityLineItemTriggerHandler so the Discount_Reason_Required_High_Value validation rule can key off an actual discount instead of the Amount &gt;= 100k proxy.</description>
+    <inlineHelpText
+  >Maintained by the OpportunityLineItem trigger — do not edit manually. Checked when any product line on this opportunity is discounted.</inlineHelpText>
+    <label>Is Discounted</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

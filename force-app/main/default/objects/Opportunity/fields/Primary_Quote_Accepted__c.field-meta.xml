@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Quote_Accepted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >True once the primary Quote for this opportunity has been moved to Accepted. Stamped by the Quote trigger so the Opportunity flow can advance to Negotiation/Closed Won.</description>
+    <inlineHelpText
+  >Maintained by the Quote trigger — do not edit manually.</inlineHelpText>
+    <label>Primary Quote Accepted</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

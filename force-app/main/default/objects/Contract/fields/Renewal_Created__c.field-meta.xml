@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Idempotency guard for the renewal-creation job: true once a renewal Opportunity has been spawned for this Contract. Prevents duplicate renewal Opps on re-run.</description>
+    <inlineHelpText
+  >Set automatically once a renewal Opportunity has been created. Do not edit.</inlineHelpText>
+    <label>Renewal Created</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

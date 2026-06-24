@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <description
+  >DEACTIVATED by (turned off via the sibling FlowDefinition's activeVersionNumber=0 — a Draft status alone does not deactivate the org's active version). This flow used to create the renewal-risk escalation Task, but its "just entered escalation" gate (WasEscalating == false) raced CaseTriggerHandler's same-transaction Escalated_To_Renewal_Queue__c stamp, so the Task was silently skipped. Escalation — the flag stamp, the Renewal_Risk_Raised__e event, AND the escalation Task — now lives entirely in CaseTriggerHandler.escalateRenewalRisk. Retained as an inert stub because the additive deploy pipeline can't delete a flow; remove it in a destructive-changes pass.</description>
+    <environments>Default</environments>
+    <interviewLabel
+  >Case After Save - Renewal Risk Escalation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case After Save - Renewal Risk Escalation</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

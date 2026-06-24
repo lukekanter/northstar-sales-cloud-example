@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Provisioning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >Whether selling any product in this family triggers Provisioning_Requested__e. Functional duplicate of the formula on OrderItem.Requires_Provisioning__c but stored on the rule so policy can be revised without redeploying formulas.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Does this family need a provisioning step?</inlineHelpText>
+    <label>Requires Provisioning</label>
+    <type>Checkbox</type>
+</CustomField>
