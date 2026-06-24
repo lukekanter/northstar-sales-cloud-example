@@ -1,5 +1,9 @@
 # Northstar Cloud Systems — example Sales Cloud org
 
+**Looking for a realistic, openly available Salesforce org to test a tool, app,
+or managed package against under production-like conditions — before pointing it
+at a real production org?** That's exactly what this repository is.
+
 A source-controlled Salesforce **Sales Cloud** org for a fictional mid-market
 B2B SaaS company, **Northstar Cloud Systems**. It models a realistic RevOps
 subscription business end to end: Leads → qualification/conversion →
