@@ -151,8 +151,8 @@ public with sharing class OpportunityLineItemTriggerHandler extends TriggerHandl
 
     RevenueCalculationService.recalculate(parents.values(), olisByOppId);
 
-    // Roll the per-line Discount up to a header "is discounted" flag (issue
-    ): true when any OLI carries a Discount >0. This is the
+    // Roll the per-line Discount up to a header "is discounted" flag:
+    // true when any OLI carries a Discount > 0. This is the
     // honest signal the Discount_Reason_Required_High_Value VR keys off,
     // replacing the Amount >= 100k proxy.
     for (Opportunity p : parents.values()) {
